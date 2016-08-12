@@ -1,6 +1,6 @@
 #include <iostream>
-int fib(int n){
-	int resposta = 1, ult = 1, penult = 1;
+long long int fib(int n){
+	long long int resposta = 1, ult = 1, penult = 1;
 	if (n == 0 || n == 1)
 		return 1;
 	else{
