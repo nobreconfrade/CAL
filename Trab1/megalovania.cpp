@@ -6,6 +6,7 @@ Equipe:
     Karll Henning
     William Pereira
 */
+#include <numeric>
 #include "megalovania.h"
 
 int main(){
@@ -31,7 +32,7 @@ int main(){
     cout << "Escolha o tamanho do vetor:" << endl;
     cout << "==============================================" << endl;
     cin >> vectOption;
-    v.reserve(vectOption);
+    v.resize(vectOption);
     cout << "==============================================" << endl;
     cout << "Escolha o tipo de ordenação do vetor:" << endl;
     cout << "1.Vetor em ordem crescente" << endl;
@@ -74,9 +75,7 @@ int main(){
 void createVector(int ordeOption, int vectOption, vector<int> &v) {
     switch (ordeOption) {
         case 1:
-            for(int i = 0 ; i < vectOption ; i++){
-                v.push_back(i);
-            }
+            iota (begin(v), end(v), 0);
             break;
         case 2:
             for (int i = vectOption; i > 0; i--) {
