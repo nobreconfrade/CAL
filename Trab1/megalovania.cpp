@@ -34,14 +34,13 @@ int main(){
     cout << "1.Vetor em ordem crescente" << endl;
     cout << "2.Vetor em ordem decrescente" << endl;
     cout << "3.Vetor em ordem aleatória" << endl;
-    cout << "3.Vetor em ordem aleatória com um elemento 100.000.000" << endl;
+    cout << "4.Vetor em ordem aleatória com um elemento 100.000.000" << endl;
     cout << "==============================================" << endl;
     cin >> ordeOption;
 
     createVector(ordeOption,vectOption,v);
-    cout << v.size() << endl;
-    for(int i = 0 ; i < vectOption ; i++)
-        cout << v[i] << endl;
+    // for(int i = 0 ; i < vectOption ; i++)
+    //     cout << v[i] << endl;
 
     switch (sortOption) {
         case 1:
@@ -64,5 +63,25 @@ void createVector(int ordeOption, int vectOption, vector<int> &v) {
             for (int i = vectOption; i > 0; i--) {
                 v.push_back(i);
             }
+            break;
+        case 3:
+            for(int i = 0; i < vectOption; i++) {
+                int aux = rand() % 10000000;
+                v.push_back(aux);
+            }
+            break;
+        case 4:
+            int valorfix = rand() % vectOption-1;
+            for(int i = 0; i < vectOption; i++){
+                if(i == valorfix){
+                    v.push_back(100000000);
+                }
+                else{
+                    int aux = rand() % 10000000;                    
+                    v.push_back(aux);
+                }
+            }
+            break;
+
     }
 }
