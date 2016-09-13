@@ -38,7 +38,7 @@ int main(){
     cout << "==============================================" << endl;
     cin >> ordeOption;
 
-    createVector(vectOption,ordeOption,v);
+    createVector(ordeOption,vectOption,v);
     cout << v.size() << endl;
     for(int i = 0 ; i < vectOption ; i++)
         cout << v[i] << endl;
@@ -57,7 +57,7 @@ void createVector(int ordeOption, int vectOption, vector<int> &v) {
     switch (ordeOption) {
         case 1:
             for(int i = 0 ; i < vectOption ; i++){
-                v[i] = i;
+                v.push_back(i);
             }
             break;
         case 2:
