@@ -11,7 +11,12 @@ Equipe:
 #include <stdlib.h>
 #include <math.h>
 #include <vector>
+#include <time.h>
+#include <ctime>
+
 #include "bubblesort.cpp"
+
 using namespace std;
 
 void createVector (int sortOption, int vectOption, vector<int> &v);
+double calcTime (struct timespec endtime, struct timespec begintime);

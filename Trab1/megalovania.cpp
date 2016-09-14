@@ -10,6 +10,9 @@ Equipe:
 
 int main(){
     int sortOption,vectOption,ordeOption;
+    // time_t start,finish;
+    // clock_t begintime, endtime;
+    struct timespec begintime, endtime;
     vector<int> v;
     system("clear");
     cout << "==============================================" << endl;
@@ -39,11 +42,18 @@ int main(){
     cin >> ordeOption;
 
     createVector(ordeOption,vectOption,v);
+    // printf("\n");
     // for(int i = 0 ; i < vectOption ; i++)
     //     cout << v[i] << endl;
+    // printf("\n");
 
     switch (sortOption) {
         case 1:
+            cout << "start!" << endl;
+            clock_gettime(CLOCK_MONOTONIC, &begintime);
+            bubbleSort(v);
+            clock_gettime(CLOCK_MONOTONIC, &endtime);
+            printf("finish! - Tempo de executação: %.4lf\n", calcTime(endtime,begintime));
             break;
         case 2:
             break;
@@ -84,4 +94,10 @@ void createVector(int ordeOption, int vectOption, vector<int> &v) {
             break;
 
     }
+}
+
+double calcTime (struct timespec endtime, struct timespec begintime){
+    double finaltime = endtime.tv_sec - begintime.tv_sec;
+    finaltime += (endtime.tv_nsec - begintime.tv_nsec) / 1000000000.0;
+    return finaltime;
 }
