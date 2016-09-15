@@ -63,6 +63,12 @@ int main(){
 			mergeSort(v, 0, v.size());
 		}
 		break;
+		case 4:
+		{
+			Timer timer = Timer("QuickSort");
+			Quicksort(v, 0, v.size());
+		}
+		break;
 		default:
 		break;
 	}

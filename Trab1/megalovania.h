@@ -14,10 +14,9 @@ Equipe:
 #include <time.h>
 #include <ctime>
 
+// Incluir '.cpp' pode acabar causando problemas de dupla definição
+//de funções e variáveis. A melhor prática seria ter um '.hpp' ou '.h'
+//para cada .cpp e incluir o '.hpp' ou '.h'.
 #include "bubblesort.cpp"
 #include "mergesort.cpp"
-
-using namespace std;
-
-void createVector (int sortOption, int vectOption, vector<int> &v);
-double calcTime (struct timespec endtime, struct timespec begintime);
+#include "quicksort.hpp"
