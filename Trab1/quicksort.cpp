@@ -43,7 +43,7 @@ void Quicksort(vector<int>& v, int e, int d) {
 		return;
 
 	int iPartition = Partition(v, e, d);
-
+	
 	Quicksort(v, e, iPartition);
 	Quicksort(v, iPartition+1, d);
 }
