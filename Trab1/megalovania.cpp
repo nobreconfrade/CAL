@@ -57,6 +57,15 @@ int main(){
             break;
         case 2:
             break;
+        case 3:
+            printVector(v, vectOption);
+            cout << "start!" << endl;
+            clock_gettime(CLOCK_MONOTONIC, &begintime);
+            mergeSort(v, 0, vectOption);
+            clock_gettime(CLOCK_MONOTONIC, &endtime);
+            printf("finish! - Tempo de executação: %.4lf\n", calcTime(endtime,begintime));
+            printVector(v, vectOption);
+            break;
         default:
             break;
     }
@@ -87,7 +96,7 @@ void createVector(int ordeOption, int vectOption, vector<int> &v) {
                     v.push_back(100000000);
                 }
                 else{
-                    int aux = rand() % 10000000;                    
+                    int aux = rand() % 10000000;
                     v.push_back(aux);
                 }
             }
@@ -100,4 +109,10 @@ double calcTime (struct timespec endtime, struct timespec begintime){
     double finaltime = endtime.tv_sec - begintime.tv_sec;
     finaltime += (endtime.tv_nsec - begintime.tv_nsec) / 1000000000.0;
     return finaltime;
+}
+
+void printVector (vector<int> &v, int vectOption) {
+    for(int r = 0; r < vectOption; ++r){
+        printf("%d\n", v[r]);
+    }
 }
