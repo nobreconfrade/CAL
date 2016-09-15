@@ -13,22 +13,25 @@ void Swap(T& a, T& b) {
 }
 
 // Tempo: O(n) | Espaço: O(1)
-int Partition(vector<int>& v, int e, int d) {
-	int iLeftScan 	= e;
-	int iRightScan 	= d;
+int Partition(vector<int>& v, int iPivot, int iLeft, int iRight) {
+	int iLeftScan 	= iLeft;
+	int iRightScan 	= iRight;
 
-	int iPivot = e;
 	int pivot = v[iPivot];
 
 	while (iLeftScan < iRightScan) {
-		while (v[iLeftScan] <= pivot && iLeftScan <= d && iRightScan > iLeftScan) {
+		while (v[iLeftScan] <= pivot &&
+				iLeftScan <= iRight &&
+				iRightScan > iLeftScan) {
 			iLeftScan += 1;
 		}
-		while (v[iRightScan] > pivot && iRightScan >= e && iRightScan >= iLeftScan) {
+		while (v[iRightScan] > pivot &&
+				iRightScan >= iLeft &&
+				iRightScan >= iLeftScan) {
 			iRightScan -= 1;
 		}
 
-		if (iRightScan > iLeftScan) {
+		if (iLeftScan < iRightScan) {
 			Swap(v[iLeftScan], v[iRightScan]);
 		}
 	}
@@ -38,12 +41,12 @@ int Partition(vector<int>& v, int e, int d) {
 	return iRightScan;
 }
 
-void Quicksort(vector<int>& v, int e, int d) {
-	if(d - e < 2)
+void Quicksort(vector<int>& v, int iLeft, int iRight) {
+	if(iRight - iLeft < 2)
 		return;
 
-	int iPartition = Partition(v, e, d);
-	
-	Quicksort(v, e, iPartition);
-	Quicksort(v, iPartition+1, d);
+	int iPartition = Partition(v, iLeft, iLeft, iRight);
+
+	Quicksort(v, iLeft, iPartition);
+	Quicksort(v, iPartition+1, iRight);
 }

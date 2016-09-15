@@ -24,9 +24,9 @@ int main(){
 	cout << "2.Insert Sort" << endl;
 	cout << "3.Merge Sort" << endl;
 	cout << "4.Quick Sort" << endl;
-	cout << "4.Heap Sort" << endl;
-	cout << "5.Counting Sort" << endl;
-	cout << "6.Bucket Sort" << endl;
+	cout << "5.Heap Sort" << endl;
+	cout << "6.Counting Sort" << endl;
+	cout << "7.Bucket Sort" << endl;
 	cout << "==============================================" << endl;
 	cin >> sortOption;
 	cout << "==============================================" << endl;
