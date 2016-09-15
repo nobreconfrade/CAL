@@ -5,6 +5,8 @@
 #include <iostream>
 
 using std::vector;
+using std::cout;
+using std::endl;
 
 void CreateVector(int ordeOption, int vectOption, vector<int> &v) {
 	switch (ordeOption) {
@@ -39,9 +41,12 @@ void CreateVector(int ordeOption, int vectOption, vector<int> &v) {
 	}
 }
 
-void PrintVector (vector<int> &v, int vectOption) {
-	for(int r = 0; r < vectOption; ++r){
-		std::cout << v[r] << ',';
+void PrintVector (vector<int> &v) {
+	cout << '[';
+	for(int r = 0; r < v.size() - 1; ++r){
+		std::cout << v[r] << ", ";
 	}
+	// Imprime a última posição
+	cout << v[v.size() - 1] << ']';
 	std::cout << std::endl;
 }

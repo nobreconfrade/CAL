@@ -5,5 +5,5 @@
 
 void CreateVector(int ordeOption, int vectOption, std::vector<int> &v);
 
-void PrintVector (std::vector<int> &v, int vectOption);
+void PrintVector (std::vector<int> &v);
 #endif

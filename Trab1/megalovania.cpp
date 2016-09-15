@@ -13,13 +13,14 @@ Equipe:
 #include "megalovania.h"
 
 int main(){
-	int sortOption,vectOption,ordeOption;
+	int sortOption, vectOption, ordeOption;
 
 	vector<int> v;
 	system("clear");
 	cout << "==============================================" << endl;
 	cout << "欢迎 ao trabalho 1 de CAL!" << endl;
 	cout << "Escolha o algoritmo de ordenação:" << endl;
+	cout << "0.Create Array/Vector" << endl;
 	cout << "1.Bubble Sort" << endl;
 	cout << "2.Insert Sort" << endl;
 	cout << "3.Merge Sort" << endl;
@@ -29,6 +30,7 @@ int main(){
 	cout << "7.Bucket Sort" << endl;
 	cout << "==============================================" << endl;
 	cin >> sortOption;
+
 	cout << "==============================================" << endl;
 	cout << "Escolha o tamanho do vetor:" << endl;
 	cout << "==============================================" << endl;
@@ -44,7 +46,7 @@ int main(){
 	cin >> ordeOption;
 
 	CreateVector(ordeOption, vectOption, v);
-
+	PrintVector(v);
 	switch (sortOption) {
 		case 1:
 		{
@@ -73,5 +75,5 @@ int main(){
 		break;
 	}
 
-	PrintVector(v, vectOption);
+	PrintVector(v);
 }
