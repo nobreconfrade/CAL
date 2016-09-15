@@ -1,4 +1,3 @@
-ls
 /*
 PRAISE THE SUN \o/
 Trabalho 1 de Complexidade de Algoritmos: Complexidade de ordenação
@@ -34,7 +33,7 @@ int main(){
 	cout << "Escolha o tamanho do vetor:" << endl;
 	cout << "==============================================" << endl;
 	cin >> vectOption;
-	v.resize(vectOption);
+	v.reserve(vectOption);
 	cout << "==============================================" << endl;
 	cout << "Escolha o tipo de ordenação do vetor:" << endl;
 	cout << "1.Vetor em ordem crescente" << endl;
@@ -45,10 +44,6 @@ int main(){
 	cin >> ordeOption;
 
 	CreateVector(ordeOption, vectOption, v);
-	// printf("\n");
-	// for(int i = 0 ; i < vectOption ; i++)
-	//	 cout << v[i] << endl;
-	// printf("\n");
 
 	switch (sortOption) {
 		case 1:
@@ -56,10 +51,21 @@ int main(){
 			Timer timer = Timer("BubbleSort");
 			bubbleSort(v);
 		}
-			break;
+		break;
 		case 2:
-			break;
+		{
+
+		}
+		break;
+		case 3:
+		{
+			Timer timer = Timer("MergeSort");
+			mergeSort(v, 0, v.size());
+		}
+		break;
 		default:
-			break;
+		break;
 	}
+
+	PrintVector(v, vectOption);
 }

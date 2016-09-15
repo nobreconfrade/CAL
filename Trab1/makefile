@@ -1,2 +1,2 @@
 all:
-		g++ megalovania.cpp -std=c++11 -o trabalho1.exe
+	g++ megalovania.cpp vector_fill_utils.cpp timer.cpp -std=c++11 -o trabalho1.exe
