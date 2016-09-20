@@ -42,9 +42,13 @@ void CreateVector(int ordeOption, int vectOption, vector<int> &v) {
 }
 
 void PrintVector (vector<int> &v) {
+	if (v.empty()) {
+		cout << "[cri cri cri...]" << endl;
+		return;
+	}
 	cout << '[';
-	for(int r = 0; r < v.size() - 1; ++r){
-		std::cout << v[r] << ", ";
+	for(uint r = 0; r < v.size() - 1; ++r){
+		cout << v[r] << ", ";
 	}
 	// Imprime a última posição
 	cout << v[v.size() - 1] << ']';
