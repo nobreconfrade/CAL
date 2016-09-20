@@ -1,4 +1,8 @@
 #include <iostream>
+#include <vector>
+
+#include "mergesort.hpp"
+
 using namespace std;
 
 // Tempo: O(n) | Espaço: O(n)
