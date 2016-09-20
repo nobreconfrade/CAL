@@ -10,6 +10,8 @@ Equipe:
 #include "timer.hpp"
 #include "vector_fill_utils.hpp"
 
+using namespace std;
+
 #include "megalovania.h"
 
 int main(){
