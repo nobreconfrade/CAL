@@ -13,7 +13,7 @@ void Swap(T& a, T& b) {
 }
 
 // Tempo: O(n) | Espaço: O(1)
-int Partition(vector<int>& v, int iPivot, int iLeft, int iRight) {
+int partition(vector<int>& v, int iPivot, int iLeft, int iRight) {
 	int iLeftScan 	= iLeft;
 	int iRightScan 	= iRight;
 
@@ -41,12 +41,12 @@ int Partition(vector<int>& v, int iPivot, int iLeft, int iRight) {
 	return iRightScan;
 }
 
-void Quicksort(vector<int>& v, int iLeft, int iRight) {
+void quickSort(vector<int>& v, int iLeft, int iRight) {
 	if(iRight - iLeft < 2)
 		return;
 
-	int iPartition = Partition(v, iLeft, iLeft, iRight);
+	int iPartition = partition(v, iLeft, iLeft, iRight);
 
-	Quicksort(v, iLeft, iPartition);
-	Quicksort(v, iPartition+1, iRight);
+	quickSort(v, iLeft, iPartition);
+	quickSort(v, iPartition+1, iRight);
 }

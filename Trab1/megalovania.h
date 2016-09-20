@@ -18,5 +18,6 @@ Equipe:
 //de funções e variáveis. A melhor prática seria ter um '.hpp' ou '.h'
 //para cada .cpp e incluir o '.hpp' ou '.h'.
 #include "bubblesort.cpp"
+#include "insertsort.cpp"
 #include "mergesort.cpp"
 #include "quicksort.hpp"

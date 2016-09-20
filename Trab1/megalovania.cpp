@@ -24,10 +24,11 @@ int main(){
 	cout << "1.Bubble Sort" << endl;
 	cout << "2.Insert Sort" << endl;
 	cout << "3.Merge Sort" << endl;
-	cout << "4.Quick Sort" << endl;
-	cout << "5.Heap Sort" << endl;
-	cout << "6.Counting Sort" << endl;
-	cout << "7.Bucket Sort" << endl;
+	cout << "4.Quick Sort (Pivo na primeira posicao)" << endl;
+	cout << "5.Quick Sort (Pivo em qualquer posicao)" << endl;
+	cout << "6.Heap Sort" << endl;
+	cout << "7.Counting Sort" << endl;
+	cout << "8.Bucket Sort" << endl;
 	cout << "==============================================" << endl;
 	cin >> sortOption;
 
@@ -56,7 +57,8 @@ int main(){
 		break;
 		case 2:
 		{
-
+			Timer timer = Timer("InsertSort");
+			insertSort(v);
 		}
 		break;
 		case 3:
@@ -68,7 +70,27 @@ int main(){
 		case 4:
 		{
 			Timer timer = Timer("QuickSort");
-			Quicksort(v, 0, v.size());
+			quickSort(v, 0, v.size());
+		}
+		break;
+		case 5:
+		{
+
+		}
+		break;
+		case 6:
+		{
+
+		}
+		break;
+		case 7:
+		{
+
+		}
+		break;
+		case 8:
+		{
+
 		}
 		break;
 		default:
