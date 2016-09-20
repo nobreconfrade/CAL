@@ -3,6 +3,6 @@
 
 #include <vector>
 
-void quickSort(std::vector<int>& v, int e, int d);
+void quickSort(std::vector<int>& v, int iLeft, int iRight, int iPivot);
 
 #endif // QUICKSORT_HPP

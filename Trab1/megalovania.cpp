@@ -66,8 +66,15 @@ int main(){
 			break;
 			case 4:
 			{
-				Timer timer = Timer("QuickSort");
-				quickSort(v, 0, v.size());
+				Timer timer = Timer("QuickSort1");
+				quickSort(v, 0, v.size(), 0);
+			}
+			break;
+			case 5:
+			{
+				int iPivot = v.size() / 2;
+				Timer timer = Timer("QuickSort2");
+				quickSort(v, 0, v.size(), iPivot);
 			}
 			break;
 			default:

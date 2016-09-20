@@ -8,6 +8,8 @@ using std::vector;
 using std::cout;
 using std::endl;
 
+#define MAX_NUM 10000
+
 void CreateVector(int ordeOption, int vectOption, vector<int> &v) {
 	switch (ordeOption) {
 		case 1:
@@ -22,21 +24,17 @@ void CreateVector(int ordeOption, int vectOption, vector<int> &v) {
 		break;
 		case 3:
 		for(int i = 0; i < vectOption; i++) {
-			int aux = rand() % 10000000;
+			int aux = rand() % MAX_NUM;
 			v.push_back(aux);
 		}
 		break;
 		case 4:
 		int valorfix = rand() % vectOption - 1;
 		for(int i = 0; i < vectOption; i++){
-			if(i == valorfix){
-				v.push_back(100000000);
-			}
-			else{
-				int aux = rand() % 10000000;
-				v.push_back(aux);
-			}
+			int aux = rand() % MAX_NUM;
+			v.push_back(aux);
 		}
+		v[valorfix] = 100000000;
 		break;
 	}
 }
@@ -51,6 +49,5 @@ void PrintVector (vector<int> &v) {
 		cout << v[r] << ", ";
 	}
 	// Imprime a última posição
-	cout << v[v.size() - 1] << ']';
-	std::cout << std::endl;
+	cout << v[v.size() - 1] << ']' << endl;
 }

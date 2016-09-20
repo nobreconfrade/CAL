@@ -41,12 +41,12 @@ int partition(vector<int>& v, int iPivot, int iLeft, int iRight) {
 	return iRightScan;
 }
 
-void quickSort(vector<int>& v, int iLeft, int iRight) {
+void quickSort(vector<int>& v, int iLeft, int iRight, int iPivot) {
 	if(iRight - iLeft < 2)
 		return;
 
 	int iPartition = partition(v, iLeft, iLeft, iRight);
 
-	quickSort(v, iLeft, iPartition);
-	quickSort(v, iPartition+1, iRight);
+	quickSort(v, iLeft, iPartition, iPivot);
+	quickSort(v, iPartition+1, iRight, iPivot);
 }
