@@ -122,8 +122,9 @@ void SetupVector() {
 	cout << "Escolha o tipo de ordenação do vetor:" << endl;
 	cout << "1.Vetor em ordem crescente" << endl;
 	cout << "2.Vetor em ordem decrescente" << endl;
-	cout << "3.Vetor em ordem aleatória" << endl;
-	cout << "4.Vetor em ordem aleatória com um elemento 100.000.000" << endl;
+	cout << "3.Vetor em ordem aleatória esparso" << endl;
+	cout << "4.Vetor em ordem aleatória esparso com elemento 100.000.000" << endl;
+	cout << "5.Vetor em ordem aleatória denso" << endl;
 	cout << "==============================================" << endl;
 	uint fillOrderType;
 	cin >> fillOrderType;

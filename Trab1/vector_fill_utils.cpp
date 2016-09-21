@@ -8,12 +8,19 @@ using std::vector;
 using std::cout;
 using std::endl;
 
+template<typename T>
+void Swap(T& a, T& b) {
+	T t = b;
+	b = a;
+	a = t;
+}
+
 #define MAX_NUM 10000
 
 void CreateVector(int ordeOption, int vectOption, vector<int> &v) {
 	switch (ordeOption) {
 		case 1:
-		for (int i = 0; i < vectOption; i--) {
+		for (int i = 0; i < vectOption; i++) {
 			v.push_back(i);
 		}
 		break;
@@ -29,12 +36,23 @@ void CreateVector(int ordeOption, int vectOption, vector<int> &v) {
 		}
 		break;
 		case 4:
-		int valorfix = rand() % vectOption - 1;
-		for(int i = 0; i < vectOption; i++){
-			int aux = rand() % MAX_NUM;
-			v.push_back(aux);
+		{
+			int valorfix = rand() % vectOption - 1;
+			for(int i = 0; i < vectOption; i++){
+				int aux = rand() % MAX_NUM;
+				v.push_back(aux);
+			}
+			v[valorfix] = 100000000;
 		}
-		v[valorfix] = 100000000;
+		break;
+		case 5:
+		for (int i = vectOption; i > 0; i--) {
+			v.push_back(i);
+		}
+		for (int i = 0; i < vectOption; i++) {
+			int iSwapPartner = rand() % vectOption;
+			Swap(v[i], v[iSwapPartner]);
+		}
 		break;
 	}
 }
