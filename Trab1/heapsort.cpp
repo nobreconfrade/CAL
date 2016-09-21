@@ -41,4 +41,19 @@ void Heapify (vector<int>& array, int i) {
 	}
 }
 
-// void Heapsort (vector<int>& array) {};
+void BuildHeap(vector<int>& array)
+{
+	for(int i = array.size() / 2; i > 0; i--)
+	{
+		Heapify(array, i);
+	}
+}
+void heapSort(vector<int>& array)
+{
+	BuildHeap(array);
+	for(int i = array.size(); i > 1; i--)
+	{
+		Swap(array[1], array[i]);
+		Heapify(array, i);
+	}
+}

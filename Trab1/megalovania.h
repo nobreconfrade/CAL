@@ -23,3 +23,4 @@ Equipe:
 #include "quicksort.hpp"
 #include "countingsort.hpp"
 #include "bucketsort.hpp"
+#include "heapsort.hpp"

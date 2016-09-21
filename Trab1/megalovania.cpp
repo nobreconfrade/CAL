@@ -77,6 +77,12 @@ int main(){
 				quickSort(v, 0, v.size(), iPivot);
 			}
 			break;
+			case 6:
+			{
+				Timer timer = Timer("HeapSort");
+				heapSort(v);
+			}
+			break;
 			case 7:
 			{
 				Timer timer = Timer("CountingSort");
