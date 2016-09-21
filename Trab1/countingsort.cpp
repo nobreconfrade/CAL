@@ -27,4 +27,6 @@ void countingSort(vector<int>& v){
 			count[i - min] = count[i - min] - 1;
 		}
 	}
+
+	count.clear();
 }

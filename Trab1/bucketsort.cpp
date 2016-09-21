@@ -79,4 +79,13 @@ void bucketSort(vector<int>& v){
 			}
 		}
 	}
+
+	for(int i = 0; i < buckets.size(); i++){
+		if(buckets[i].empty())
+			continue;
+		else{
+			buckets[i].clear();
+		}
+	}
+	buckets.clear();
 }
