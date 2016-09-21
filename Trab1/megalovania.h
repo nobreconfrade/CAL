@@ -21,3 +21,5 @@ Equipe:
 #include "insertsort.hpp"
 #include "mergesort.hpp"
 #include "quicksort.hpp"
+//#include "countingsort.cpp"
+//#include "bucketsort.cpp"

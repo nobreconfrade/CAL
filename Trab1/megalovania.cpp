@@ -77,6 +77,18 @@ int main(){
 				quickSort(v, 0, v.size(), iPivot);
 			}
 			break;
+			case 7:
+			{
+				Timer timer = Timer("CountingSort");
+				//countingSort(v);
+			}
+			break;
+			case 8:
+			{
+				Timer timer = Timer("BucketSort");
+				//bucketSort(v);
+			}
+			break;
 			default:
 				shouldQuit = true;
 			break;
