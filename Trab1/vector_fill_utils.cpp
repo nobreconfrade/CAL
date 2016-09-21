@@ -37,7 +37,7 @@ void CreateVector(int ordeOption, int vectOption, vector<int> &v) {
 		break;
 		case 4:
 		{
-			int valorfix = rand() % vectOption - 1;
+			int valorfix = vectOption / 2;
 			for(int i = 0; i < vectOption; i++){
 				int aux = rand() % MAX_NUM;
 				v.push_back(aux);
