@@ -17,7 +17,6 @@ static vector<int> unorderedVector;
 
 void SetupVector();
 
-
 int main(){
 	system("clear");
 	int menuOption;
@@ -37,6 +36,10 @@ int main(){
 		cout << "8.Bucket Sort" << endl;
 		cout << "==============================================" << endl;
 		cin >> menuOption;
+		cout << menuOption << endl;
+		cout << menuOption << endl;
+		cout << menuOption << endl;
+		cout << menuOption << endl;
 
 		auto v = unorderedVector;
 		switch (menuOption) {
