@@ -108,6 +108,10 @@ int main(){
 }
 
 void SetupVector() {
+	if (unorderedVector.size() != 0) {
+		unorderedVector.clear();
+	}
+
 	uint vectorSize;
 	cout << "==============================================" << endl;
 	cout << "Escolha o tamanho do vetor:" << endl;
