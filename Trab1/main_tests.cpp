@@ -34,14 +34,7 @@ int main(int argc, char const *argv[]) {
 				"(6) Aleatória denso e elementos repetidos" << endl << endl;
 		return -1;
 	}
-
-	cout << "1.Ordem crescente" << endl;
-	cout << "2.Ordem decrescente" << endl;
-	cout << "3.Ordem aleatória esparso" << endl;
-	cout << "4.Ordem aleatória esparso com elemento 100.000.000" << endl;
-	cout << "5.Ordem aleatória e denso" << endl;
-	cout << "6.Ordem aleatória denso e elementos repetidos" << endl;
-
+	
 	istringstream ss;
 	int vectorSize, fillOrderType;
 	ss = istringstream(argv[1]);

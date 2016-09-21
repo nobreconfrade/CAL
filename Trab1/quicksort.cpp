@@ -45,7 +45,7 @@ void quickSort(vector<int>& v, int iLeft, int iRight, int iPivot) {
 	if(iRight - iLeft < 2)
 		return;
 
-	int iPartition = partition(v, iLeft, iLeft, iRight);
+	int iPartition = partition(v, iPivot, iLeft, iRight);
 
 	quickSort(v, iLeft, iPartition, iPivot);
 	quickSort(v, iPartition+1, iRight, iPivot);
