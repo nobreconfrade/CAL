@@ -27,8 +27,7 @@ int main(){
 		cout << "==============================================" << endl;
 		cout << "欢迎 ao trabalho 1 de CAL!" << endl;
 		cout << "Escolha o algoritmo de ordenação:" << endl;
-		cout << "0.Setup Vector" << endl;
-		cout << "1.Bubble Sort" << endl;
+		cout << "0.Setup Vector" << endl; cout << "1.Bubble Sort" << endl;
 		cout << "2.Insert Sort" << endl;
 		cout << "3.Merge Sort" << endl;
 		cout << "4.Quick Sort (Pivo na primeira posicao)" << endl;
@@ -120,11 +119,12 @@ void SetupVector() {
 	unorderedVector.reserve(vectorSize);
 	cout << "==============================================" << endl;
 	cout << "Escolha o tipo de ordenação do vetor:" << endl;
-	cout << "1.Vetor em ordem crescente" << endl;
-	cout << "2.Vetor em ordem decrescente" << endl;
-	cout << "3.Vetor em ordem aleatória esparso" << endl;
-	cout << "4.Vetor em ordem aleatória esparso com elemento 100.000.000" << endl;
-	cout << "5.Vetor em ordem aleatória denso" << endl;
+	cout << "1.Ordem crescente" << endl;
+	cout << "2.Ordem decrescente" << endl;
+	cout << "3.Ordem aleatória esparso" << endl;
+	cout << "4.Ordem aleatória esparso com elemento 100.000.000" << endl;
+	cout << "5.Ordem aleatória e denso" << endl;
+	cout << "6.Ordem aleatória denso e elementos repetidos" << endl;
 	cout << "==============================================" << endl;
 	uint fillOrderType;
 	cin >> fillOrderType;

@@ -54,6 +54,15 @@ void CreateVector(int ordeOption, int vectOption, vector<int> &v) {
 			Swap(v[i], v[iSwapPartner]);
 		}
 		break;
+		case 6:
+		for (int i = vectOption; i > 0; i--) {
+			v.push_back(i % (vectOption/4));
+		}
+		for (int i = 0; i < vectOption; i++) {
+			int iSwapPartner = rand() % vectOption;
+			Swap(v[i], v[iSwapPartner]);
+		}
+		break;
 	}
 }
 
