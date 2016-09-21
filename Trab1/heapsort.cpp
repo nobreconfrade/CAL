@@ -23,27 +23,27 @@ void Heapify (vector<int>& array, int i) {
 
 	int n = array.size();
 
-	int iLargest = 0;
-	if (iLeft < n && array[iLeft] > array[i]) {
-		iLargest = iLeft;
+	int iSmallest = i;
+	if (iLeft < n && array[iLeft] < array[i]) {
+		iSmallest = iLeft;
 	}
 	else
-		iLargest = i;
+		iSmallest = i;
 
-	if (iRight < n && array[iRight] > array[iLargest]) {
-		iLargest = iRight;
+	if (iRight < n && array[iRight] < array[iSmallest]) {
+		iSmallest = iRight;
 	}
 
-	if (iLargest != i) {
-		// cout << "Swapping: " << array[i] << " " << array[iLargest] << endl;
-		Swap(array[i], array[iLargest]);
-		Heapify(array, iLargest);
+	if (iSmallest != i) {
+		// cout << "Swapping: " << array[i] << " " << array[iSmallest] << endl;
+		Swap(array[i], array[iSmallest]);
+		Heapify(array, iSmallest);
 	}
 }
 
 void BuildHeap(vector<int>& array)
 {
-	for(int i = array.size() / 2; i > 0; i--)
+	for(int i = array.size() / 2 - 1; i >= 0; i--)
 	{
 		Heapify(array, i);
 	}
@@ -51,9 +51,10 @@ void BuildHeap(vector<int>& array)
 void heapSort(vector<int>& array)
 {
 	BuildHeap(array);
-	for(int i = array.size(); i > 1; i--)
+	int iLast = array.size() - 1;
+	for(int i = iLast; i > 1; i--)
 	{
-		Swap(array[1], array[i]);
+		Swap(array[0], array[i]);
 		Heapify(array, i);
 	}
 }
