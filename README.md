@@ -1,4 +1,4 @@
-CAL# CAL
+# CAL
 
 ## Style guidelines
 
