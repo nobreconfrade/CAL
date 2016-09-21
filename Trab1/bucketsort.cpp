@@ -16,8 +16,7 @@ void Swap(T& a, T& b) {
 	a = t;
 }
 
-/*
-void insertSort(std::vector<int> &v){
+void insertSort2(std::vector<int> &v){
 	int j = 0;
 	for(int i = 1; i < v.size(); i++){
 		j = i;
@@ -27,7 +26,7 @@ void insertSort(std::vector<int> &v){
 		}
 	}
 }
-*/
+
 /*
 void printBuckets(vector<vector<int> >& buckets){
 	cout << "Tamanho: " << buckets.size();
@@ -67,7 +66,7 @@ void bucketSort(vector<int>& v){
 		if(buckets[i].empty())
 			continue;
 		else
-			insertSort(buckets[i]);
+			insertSort2(buckets[i]);
 	}
 
 	count = 0;

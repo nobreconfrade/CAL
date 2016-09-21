@@ -3,6 +3,6 @@
 
 #include <vector>
 
-void countingSort(vector<int>& v);
+void countingSort(std::vector<int>& v);
 
 #endif // COUNTINGSORT_HPP

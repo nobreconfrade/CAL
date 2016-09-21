@@ -80,13 +80,13 @@ int main(){
 			case 7:
 			{
 				Timer timer = Timer("CountingSort");
-				//countingSort(v);
+				countingSort(v);
 			}
 			break;
 			case 8:
 			{
 				Timer timer = Timer("BucketSort");
-				//bucketSort(v);
+				bucketSort(v);
 			}
 			break;
 			default:

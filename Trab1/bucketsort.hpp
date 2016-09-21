@@ -3,6 +3,6 @@
 
 #include <vector>
 
-void bucketSort(vector<int>& v);
+void bucketSort(std::vector<int>& v);
 
 #endif // BUCKETSORT_HPP
