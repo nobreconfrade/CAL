@@ -2,32 +2,33 @@
 #include <vector>
 
 #include "quicksort.hpp"
-
+#include "vector_fill_utils.hpp"
 using namespace std;
 
 template<typename T>
-void Swap(T& a, T& b) {
-	T t = b;
+void Swap(T& a, T& b)
+{
+	T t(b);
 	b = a;
 	a = t;
 }
 
-// Tempo: O(n) | Espaço: O(1)
-int partition(vector<int>& v, int iPivot, int iLeft, int iRight) {
-	int iLeftScan 	= iLeft;
+
+int partition(vector<int>& v, int iLeft, int iRight) {
+	const int iPivot = (iLeft + iRight) / 2;
+	const int pivot = v[iPivot];
+
+	Swap(v[iLeft], v[iPivot]);
+
+	int iLeftScan 	= iLeft + 1;
 	int iRightScan 	= iRight;
 
-	int pivot = v[iPivot];
-
-	while (iLeftScan < iRightScan) {
-		while (v[iLeftScan] <= pivot &&
-				iLeftScan <= iRight &&
-				iRightScan > iLeftScan) {
+	while (iLeftScan <= iRightScan) {
+		while (v[iLeftScan] <= pivot && iLeftScan <= iRightScan) {
 			iLeftScan += 1;
 		}
-		while (v[iRightScan] > pivot &&
-				iRightScan >= iLeft &&
-				iRightScan >= iLeftScan) {
+
+		while (v[iRightScan] > pivot && iLeftScan <= iRightScan) {
 			iRightScan -= 1;
 		}
 
@@ -36,17 +37,59 @@ int partition(vector<int>& v, int iPivot, int iLeft, int iRight) {
 		}
 	}
 
-	Swap(v[iPivot], v[iRightScan]);
+	Swap(v[iLeftScan - 1], v[iLeft]);
 
-	return iRightScan;
+	return iLeftScan - 1;
 }
 
-void quickSort(vector<int>& v, int iLeft, int iRight, int iPivot) {
-	if(iRight - iLeft < 2)
+void quickSort(vector<int>& v, int iLeft, int iRight) {
+	if(iLeft >= iRight)
 		return;
 
-	int iPartition = partition(v, iPivot, iLeft, iRight);
+	// PrintVector(v);
+	int iPartition = partition(v, iLeft, iRight);
+	// PrintVector(v);
+	// cout << "Parition: " << v[iPartition] << endl;
+	quickSort(v, iLeft, iPartition - 1);
+	quickSort(v, iPartition + 1, iRight);
+}
 
-	quickSort(v, iLeft, iPartition, iPivot);
-	quickSort(v, iPartition+1, iRight, iPivot);
+
+int partition2(vector<int>& v, int iLeft, int iRight) {
+	const int iPivot = iLeft;
+	const int pivot = v[iPivot];
+
+	int iLeftScan 	= iLeft + 1;
+	int iRightScan 	= iRight;
+
+	while (iLeftScan <= iRightScan) {
+		while (v[iLeftScan] <= pivot && iLeftScan <= iRightScan) {
+			iLeftScan += 1;
+		}
+
+		while (v[iRightScan] > pivot && iLeftScan <= iRightScan) {
+			iRightScan -= 1;
+		}
+
+		if (iLeftScan < iRightScan) {
+			Swap(v[iLeftScan], v[iRightScan]);
+		}
+	}
+
+	Swap(v[iLeftScan - 1], v[iLeft]);
+
+	return iLeftScan - 1;
+}
+
+
+void quickSort2(vector<int>& v, int iLeft, int iRight) {
+	if(iLeft >= iRight)
+		return;
+
+	// PrintVector(v);
+	int iPartition = partition(v, iLeft, iRight);
+	// PrintVector(v);
+	// cout << "Parition: " << v[iPartition] << endl;
+	quickSort(v, iLeft, iPartition - 1);
+	quickSort(v, iPartition + 1, iRight);
 }

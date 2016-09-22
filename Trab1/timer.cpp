@@ -6,7 +6,7 @@ using namespace std;
 
 using std::chrono::duration;
 
-Timer::Timer(const char* name = "Unnamed") {
+Timer::Timer(const char* name) {
 	this->mName = name;
 	startTime = high_resolution_clock::now();
 }

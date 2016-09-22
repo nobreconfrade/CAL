@@ -34,7 +34,7 @@ int main(int argc, char const *argv[]) {
 				"(6) Aleatória denso e elementos repetidos" << endl << endl;
 		return -1;
 	}
-	
+
 	istringstream ss;
 	int vectorSize, fillOrderType;
 	ss = istringstream(argv[1]);
@@ -50,42 +50,49 @@ int main(int argc, char const *argv[]) {
 	{
 		Timer timer = Timer("BubbleSort");
 		bubbleSort(v);
+		// PrintVector(v);
 	}
 	v = unorderedVector;
 	{
 		Timer timer = Timer("InsertSort");
 		insertSort(v);
+		// PrintVector(v);
 	}
 	v = unorderedVector;
 	{
 		Timer timer = Timer("MergeSort");
 		mergeSort(v, 0, v.size());
+		// PrintVector(v);
 	}
 	v = unorderedVector;
 	{
 		Timer timer = Timer("QuickSort1");
-		quickSort(v, 0, v.size(), 0);
+		quickSort(v, 0, v.size() - 1);
+		// PrintVector(v);
 	}
 	v = unorderedVector;
 	{
-		int iPivot = v.size() / 2;
 		Timer timer = Timer("QuickSort2");
-		quickSort(v, 0, v.size(), iPivot);
+		quickSort2(v, 0, v.size() - 1);
+		// PrintVector(v);
 	}
 	v = unorderedVector;
 	{
 		Timer timer = Timer("HeapSort");
 		heapSort(v);
+		// PrintVector(v);
 	}
 	v = unorderedVector;
 	{
 		Timer timer = Timer("CountingSort");
 		countingSort(v);
+		// PrintVector(v);
 	}
 	v = unorderedVector;
 	{
 		Timer timer = Timer("BucketSort");
 		bucketSort(v);
+		// PrintVector(v);
 	}
 
 	return 0;
