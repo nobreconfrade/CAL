@@ -84,14 +84,14 @@ int main(int argc, char const *argv[]) {
 	}
 	v = unorderedVector;
 	{
-		Timer timer = Timer("CountingSort");
-		countingSort(v);
+		Timer timer = Timer("BucketSort");
+		bucketSort(v);
 		// PrintVector(v);
 	}
 	v = unorderedVector;
 	{
-		Timer timer = Timer("BucketSort");
-		bucketSort(v);
+		Timer timer = Timer("CountingSort");
+		countingSort(v);
 		// PrintVector(v);
 	}
 
