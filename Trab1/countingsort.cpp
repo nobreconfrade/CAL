@@ -24,7 +24,7 @@ void countingSort(vector<int>& vec) {
 	for(int i = min; i <= max; i++){
 		while(count[i - min] > 0){
 			vec[z++] = i;
-			count[i - min] -= - 1;
+			count[i - min] -= 1;
 		}
 	}
 
