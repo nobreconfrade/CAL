@@ -18,7 +18,7 @@ void countingSort(vector<int>& vec) {
 
 	count.resize((max - min) + 1, 0);
 
-	for(int i = 0; i < vec.size(); i++)
+	for(unsigned i = 0; i < vec.size(); i++)
 		count[vec[i] - min] += 1;
 
 	for(int i = min; i <= max; i++){
