@@ -47,11 +47,6 @@ int main(int argc, char const *argv[]) {
 
 
 	auto v = unorderedVector;
-	{
-		Timer timer = Timer("BubbleSort");
-		bubbleSort(v);
-		// PrintVector(v);
-	}
 	v = unorderedVector;
 	{
 		Timer timer = Timer("InsertSort");
@@ -94,6 +89,10 @@ int main(int argc, char const *argv[]) {
 		countingSort(v);
 		// PrintVector(v);
 	}
-
+	{
+		Timer timer = Timer("BubbleSort");
+		bubbleSort(v);
+		// PrintVector(v);
+	}
 	return 0;
 }
