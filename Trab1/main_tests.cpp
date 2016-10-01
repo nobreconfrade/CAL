@@ -73,25 +73,26 @@ int main(int argc, char const *argv[]) {
 	}
 	v = unorderedVector;
 	{
-		Timer timer = Timer("BucketSort");
-		bucketSort(v);
-		// PrintVector(v);
-	}
-	v = unorderedVector;
-	{
 		Timer timer = Timer("CountingSort");
 		countingSort(v);
 		// PrintVector(v);
 	}
 	v = unorderedVector;
 	{
-		Timer timer = Timer("InsertSort");
-		insertSort(v);
-		// PrintVector(v);
-	}
-	{
 		Timer timer = Timer("BubbleSort");
 		bubbleSort(v);
+		// PrintVector(v);
+	}
+	v = unorderedVector;
+	{
+		Timer timer = Timer("BucketSort");
+		bucketSort(v);
+		// PrintVector(v);
+	}
+	v = unorderedVector;
+	{
+		Timer timer = Timer("InsertSort");
+		insertSort(v);
 		// PrintVector(v);
 	}
 	return 0;
