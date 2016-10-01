@@ -1,6 +1,7 @@
 #include "timer.hpp"
 #include <iostream>
 #include <chrono>
+#include <stdio.h>
 
 using namespace std;
 
@@ -15,5 +16,6 @@ Timer::~Timer() {
 	auto endTime = high_resolution_clock::now();
 	duration<float> elapsedTime = endTime - startTime;
 
-	cout << mName << ": " << elapsedTime.count() << "s" << endl;
+	cout << mName << ": " << elapsedTime.count() << endl;
+	
 }

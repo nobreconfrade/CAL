@@ -57,13 +57,13 @@ int main(int argc, char const *argv[]) {
 	}
 	v = unorderedVector;
 	{
-		Timer timer = Timer("QuickSort1");
+		Timer timer = Timer("QuickMid");
 		quickSort(v, 0, v.size() - 1);
 		// PrintVector(v);
 	}
 	v = unorderedVector;
 	{
-		Timer timer = Timer("QuickSort2");
+		Timer timer = Timer("Quick1st");
 		quickSort2(v, 0, v.size() - 1);
 		// PrintVector(v);
 	}
@@ -75,7 +75,7 @@ int main(int argc, char const *argv[]) {
 	}
 	v = unorderedVector;
 	{
-		Timer timer = Timer("CountingSort");
+		Timer timer = Timer("CountSort");
 		countingSort(v);
 		// PrintVector(v);
 	}
