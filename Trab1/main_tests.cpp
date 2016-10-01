@@ -49,12 +49,6 @@ int main(int argc, char const *argv[]) {
 	auto v = unorderedVector;
 	v = unorderedVector;
 	{
-		Timer timer = Timer("InsertSort");
-		insertSort(v);
-		// PrintVector(v);
-	}
-	v = unorderedVector;
-	{
 		Timer timer = Timer("MergeSort");
 		mergeSort(v, 0, v.size());
 		// PrintVector(v);
@@ -87,6 +81,12 @@ int main(int argc, char const *argv[]) {
 	{
 		Timer timer = Timer("CountingSort");
 		countingSort(v);
+		// PrintVector(v);
+	}
+	v = unorderedVector;
+	{
+		Timer timer = Timer("InsertSort");
+		insertSort(v);
 		// PrintVector(v);
 	}
 	{
