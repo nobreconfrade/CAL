@@ -20,34 +20,51 @@ void Swap(T& a, T& b) {
 void CreateVector(int ordeOption, int vectOption, vector<int> &v) {
 	switch (ordeOption) {
 		case 1:
+		cout << "#Crescente#" << endl;
 		for (int i = 0; i < vectOption; i++) {
 			v.push_back(i);
 		}
 		break;
 		case 2:
+		cout << "#Decrescente#" << endl;
 		for (int i = vectOption; i > 0; i--) {
 			v.push_back(i);
 		}
 		break;
 		case 3:
-		for(int i = 0; i < vectOption; i++) {
-			int aux = rand() % MAX_NUM;
-			v.push_back(aux);
+		cout << "#Aleatório denso#" << endl;
+		for (int i = vectOption; i > 0; i--) {
+			v.push_back(i);
 		}
+		for (int r = 0; r < 3; r++) {
+			for (int i = 0; i < vectOption; i++) {
+				int iSwapPartner = rand() % vectOption;
+				Swap(v[i], v[iSwapPartner]);
+			}
+		}
+
 		break;
 		case 4:
+		cout << "#Aleatório denso com elemento 100.000.000#" << endl;
 		{
-			int valorfix = vectOption / 2;
-			for(int i = 0; i < vectOption; i++){
-				int aux = rand() % MAX_NUM;
-				v.push_back(aux);
+			for (int i = vectOption; i > 0; i--) {
+				v.push_back(i);
 			}
-			v[valorfix] = 100000000;
+			for (int r = 0; r < 3; r++) {
+				for (int i = 0; i < vectOption; i++) {
+					int iSwapPartner = rand() % vectOption;
+					Swap(v[i], v[iSwapPartner]);
+				}
+			}
+
+			int iBignum = vectOption / 2;
+			v[iBignum] = 100000000;
 		}
 		break;
 		case 5:
+		cout << "#Aleatório denso com n/4 elementos repetidos#" << endl;
 		for (int i = vectOption; i > 0; i--) {
-			v.push_back(i);
+			v.push_back(i % (vectOption/4));
 		}
 		for (int i = 0; i < vectOption; i++) {
 			int iSwapPartner = rand() % vectOption;
@@ -55,12 +72,21 @@ void CreateVector(int ordeOption, int vectOption, vector<int> &v) {
 		}
 		break;
 		case 6:
-		for (int i = vectOption; i > 0; i--) {
-			v.push_back(i % (vectOption/4));
+		cout << "#Aleatório esparso#" << endl;
+		for(int i = 0; i < vectOption; i++) {
+			int aux = rand() % MAX_NUM;
+			v.push_back(aux);
 		}
-		for (int i = 0; i < vectOption; i++) {
-			int iSwapPartner = rand() % vectOption;
-			Swap(v[i], v[iSwapPartner]);
+		break;
+		case 7:
+		cout << "#Aleatório esparso com elemento 100.000.000#" << endl;
+		{
+			int valorfix = vectOption / 2;
+			for(int i = 0; i < vectOption; i++){
+				int aux = rand() % MAX_NUM;
+				v.push_back(aux);
+			}
+			v[valorfix] = 100000000;
 		}
 		break;
 	}

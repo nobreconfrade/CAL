@@ -28,10 +28,12 @@ int main(int argc, char const *argv[]) {
 				"Tipos de ordenação:" << endl <<
 				"(1) Crescente" << endl <<
 				"(2) Descrescente" << endl <<
-				"(3) Aleatória esparsa" << endl <<
-				"(4) Aleatória esparsa com elemento 100.000.000" << endl <<
-				"(5) Aleatória e denso" << endl <<
-				"(6) Aleatória denso e elementos repetidos" << endl << endl;
+				"(3) Aleatória denso" << endl <<
+				"(4) Aleatória denso com elemento 100.000.000" << endl <<
+				"(5) Aleatória denso com n/4 elementos repetidos " << endl <<
+				"(6) Aleatória esparsa" << endl <<
+				"(7) Aleatória esparsa com elemento 100.000.000" << endl <<
+				endl;
 		return -1;
 	}
 
