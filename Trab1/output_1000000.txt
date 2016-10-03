@@ -1,0 +1,53 @@
+Sample 1
+#Crescente#
+MergeSort: 0.213497
+QuickMid: 0.0692531
+Quick1st: 0.0693059
+HeapSort: 0.499169
+CountSort: 0.0291581
+BubbleSort: 2625.31
+BucketSort: 0.0575749
+InsertSort: 0.00719999 
+
+#Decrescente#
+MergeSort: 0.210252
+QuickMid: 0.0827851
+Quick1st: 0.082847
+HeapSort: 0.480905
+CountSort: 0.0284629
+BubbleSort: 6923.22
+BucketSort: 578.72
+InsertSort: 5779.1 
+
+#Aleatório denso#
+MergeSort: 0.362383
+QuickMid: 0.248964
+Quick1st: 0.249305
+HeapSort: 0.574801
+CountSort: 0.0302038
+BubbleSort: 6383.01
+BucketSort: 289.179
+InsertSort: 2890.02 
+
+#Aleatório denso com elemento 100.000.000#
+MergeSort: 0.36234
+QuickMid: 0.251102
+Quick1st: 0.251996
+HeapSort: 0.595922
+CountSort: 0.558459
+BubbleSort: 6363.82
+BucketSort: 2905.62
+InsertSort: 2961.28 
+
+#Aleatório denso com n/4 elementos repetidos#
+MergeSort: 0.385928
+QuickMid: 0.260769
+Quick1st: 0.260738
+HeapSort: 0.810119
+CountSort: 0.0324382
+BubbleSort: 6548.14
+BucketSort: 292.329
+InsertSort: 2950.44 
+
+end_sample
+
