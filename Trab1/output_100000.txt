@@ -1,0 +1,265 @@
+Sample 1
+#Crescente#
+MergeSort: 0.0207206
+QuickMid: 0.00707766
+Quick1st: 0.00818881
+HeapSort: 0.043874
+CountSort: 0.00295632
+BubbleSort: 26.9979
+BucketSort: 0.00647073
+InsertSort: 0.000743098 
+
+#Decrescente#
+MergeSort: 0.0199629
+QuickMid: 0.00807675
+Quick1st: 0.00793252
+HeapSort: 0.0396118
+CountSort: 0.00294769
+BubbleSort: 71.2127
+BucketSort: 6.17502
+InsertSort: 60.1839 
+
+#Aleatório denso#
+MergeSort: 0.0327519
+QuickMid: 0.0226568
+Quick1st: 0.0232919
+HeapSort: 0.051437
+CountSort: 0.00344123
+BubbleSort: 64.5473
+BucketSort: 3.03317
+InsertSort: 29.3342 
+
+#Aleatório denso com elemento 100.000.000#
+MergeSort: 0.0307529
+QuickMid: 0.0207613
+Quick1st: 0.0207501
+HeapSort: 0.0459962
+CountSort: 0.533511
+BubbleSort: 64.3085
+BucketSort: 29.1249
+InsertSort: 29.1255 
+
+#Aleatório denso com n/4 elementos repetidos#
+MergeSort: 0.0306333
+QuickMid: 0.020663
+Quick1st: 0.0207938
+HeapSort: 0.0475682
+CountSort: 0.00235448
+BubbleSort: 64.377
+BucketSort: 2.91016
+InsertSort: 29.3007 
+
+end_sample
+
+Sample 2
+#Crescente#
+MergeSort: 0.019382
+QuickMid: 0.00683013
+Quick1st: 0.00693
+HeapSort: 0.0441315
+CountSort: 0.00318378
+BubbleSort: 27.0924
+BucketSort: 0.00621672
+InsertSort: 0.000720518 
+
+#Decrescente#
+MergeSort: 0.018118
+QuickMid: 0.00744215
+Quick1st: 0.00745498
+HeapSort: 0.0389293
+CountSort: 0.00287685
+BubbleSort: 69.4475
+BucketSort: 5.95535
+InsertSort: 58.0181 
+
+#Aleatório denso#
+MergeSort: 0.0306398
+QuickMid: 0.0210304
+Quick1st: 0.0213706
+HeapSort: 0.0458362
+CountSort: 0.00290219
+BubbleSort: 63.9115
+BucketSort: 2.94874
+InsertSort: 29.0466 
+
+#Aleatório denso com elemento 100.000.000#
+MergeSort: 0.0308009
+QuickMid: 0.0210953
+Quick1st: 0.0212278
+HeapSort: 0.0459322
+CountSort: 0.558415
+BubbleSort: 64.7577
+BucketSort: 29.0244
+InsertSort: 28.9732 
+
+#Aleatório denso com n/4 elementos repetidos#
+MergeSort: 0.0303921
+QuickMid: 0.0198602
+Quick1st: 0.0201437
+HeapSort: 0.0459723
+CountSort: 0.00237067
+BubbleSort: 64.4333
+BucketSort: 2.91129
+InsertSort: 29.17 
+
+end_sample
+
+Sample 3
+#Crescente#
+MergeSort: 0.0179918
+QuickMid: 0.00645493
+Quick1st: 0.00647637
+HeapSort: 0.0410817
+CountSort: 0.00291354
+BubbleSort: 26.2912
+BucketSort: 0.00570612
+InsertSort: 0.000721318 
+
+#Decrescente#
+MergeSort: 0.0181273
+QuickMid: 0.00745721
+Quick1st: 0.00745877
+HeapSort: 0.0388744
+CountSort: 0.00287876
+BubbleSort: 69.4665
+BucketSort: 6.06453
+InsertSort: 58.0552 
+
+#Aleatório denso#
+MergeSort: 0.0308688
+QuickMid: 0.021221
+Quick1st: 0.0213402
+HeapSort: 0.0459268
+CountSort: 0.00289307
+BubbleSort: 64.3033
+BucketSort: 2.89931
+InsertSort: 29.0271 
+
+#Aleatório denso com elemento 100.000.000#
+MergeSort: 0.0332022
+QuickMid: 0.0228201
+Quick1st: 0.0226614
+HeapSort: 0.0512722
+CountSort: 0.580049
+BubbleSort: 64.8711
+BucketSort: 29.2027
+InsertSort: 29.1964 
+
+#Aleatório denso com n/4 elementos repetidos#
+MergeSort: 0.0304367
+QuickMid: 0.0203695
+Quick1st: 0.0203471
+HeapSort: 0.045698
+CountSort: 0.00236053
+BubbleSort: 64.1564
+BucketSort: 2.98858
+InsertSort: 29.4726 
+
+end_sample
+
+Sample 4
+#Crescente#
+MergeSort: 0.0180822
+QuickMid: 0.00645829
+Quick1st: 0.00650062
+HeapSort: 0.0412034
+CountSort: 0.00287613
+BubbleSort: 26.3058
+BucketSort: 0.00574706
+InsertSort: 0.00072051 
+
+#Decrescente#
+MergeSort: 0.0181009
+QuickMid: 0.00745134
+Quick1st: 0.00742894
+HeapSort: 0.0389191
+CountSort: 0.00286758
+BubbleSort: 69.0595
+BucketSort: 5.9246
+InsertSort: 57.9611 
+
+#Aleatório denso#
+MergeSort: 0.0315473
+QuickMid: 0.021094
+Quick1st: 0.0213268
+HeapSort: 0.0458007
+CountSort: 0.00310493
+BubbleSort: 66.0127
+BucketSort: 2.99571
+InsertSort: 29.5259 
+
+#Aleatório denso com elemento 100.000.000#
+MergeSort: 0.0308182
+QuickMid: 0.0236966
+Quick1st: 0.0235048
+HeapSort: 0.0507303
+CountSort: 0.557193
+BubbleSort: 65.3845
+BucketSort: 30.2351
+InsertSort: 29.9275 
+
+#Aleatório denso com n/4 elementos repetidos#
+MergeSort: 0.0306046
+QuickMid: 0.0203333
+Quick1st: 0.0203748
+HeapSort: 0.0457887
+CountSort: 0.00235458
+BubbleSort: 65.4888
+BucketSort: 2.92592
+InsertSort: 30.4429 
+
+end_sample
+
+Sample 5
+#Crescente#
+MergeSort: 0.0193571
+QuickMid: 0.00940666
+Quick1st: 0.00691355
+HeapSort: 0.0436998
+CountSort: 0.0031853
+BubbleSort: 27.2011
+BucketSort: 0.00574705
+InsertSort: 0.000719015 
+
+#Decrescente#
+MergeSort: 0.0182378
+QuickMid: 0.00752834
+Quick1st: 0.00745571
+HeapSort: 0.0390978
+CountSort: 0.00291414
+BubbleSort: 71.1296
+BucketSort: 6.22736
+InsertSort: 59.7 
+
+#Aleatório denso#
+MergeSort: 0.0328037
+QuickMid: 0.0214553
+Quick1st: 0.0212556
+HeapSort: 0.0461104
+CountSort: 0.00291394
+BubbleSort: 68.5483
+BucketSort: 3.20894
+InsertSort: 31.3188 
+
+#Aleatório denso com elemento 100.000.000#
+MergeSort: 0.0328946
+QuickMid: 0.0223339
+Quick1st: 0.0230305
+HeapSort: 0.0541014
+CountSort: 0.579406
+BubbleSort: 68.7831
+BucketSort: 31.2068
+InsertSort: 31.2994 
+
+#Aleatório denso com n/4 elementos repetidos#
+MergeSort: 0.0329466
+QuickMid: 0.0221549
+Quick1st: 0.0216943
+HeapSort: 0.0520644
+CountSort: 0.00263594
+BubbleSort: 68.8445
+BucketSort: 3.1839
+InsertSort: 31.4812 
+
+end_sample
+
