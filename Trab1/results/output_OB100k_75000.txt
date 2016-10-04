@@ -1,0 +1,90 @@
+Sample 1
+#Crescente#
+BucketSort: 0.119086 
+
+#Decrescente#
+BucketSort: 0.0766319 
+
+#Aleatório denso#
+BucketSort: 0.0665218 
+
+#Aleatório denso com elemento 100.000.000#
+BucketSort: 0.262324 
+
+#Aleatório denso com n/4 elementos repetidos#
+BucketSort: 0.054221 
+
+end_sample
+
+Sample 2
+#Crescente#
+BucketSort: 0.0563481 
+
+#Decrescente#
+BucketSort: 0.0566793 
+
+#Aleatório denso#
+BucketSort: 0.0646763 
+
+#Aleatório denso com elemento 100.000.000#
+BucketSort: 0.262795 
+
+#Aleatório denso com n/4 elementos repetidos#
+BucketSort: 0.0593053 
+
+end_sample
+
+Sample 3
+#Crescente#
+BucketSort: 0.0564899 
+
+#Decrescente#
+BucketSort: 0.0603726 
+
+#Aleatório denso#
+BucketSort: 0.0641078 
+
+#Aleatório denso com elemento 100.000.000#
+BucketSort: 0.264216 
+
+#Aleatório denso com n/4 elementos repetidos#
+BucketSort: 0.0554674 
+
+end_sample
+
+Sample 4
+#Crescente#
+BucketSort: 0.0574942 
+
+#Decrescente#
+BucketSort: 0.0560944 
+
+#Aleatório denso#
+BucketSort: 0.073345 
+
+#Aleatório denso com elemento 100.000.000#
+BucketSort: 0.273078 
+
+#Aleatório denso com n/4 elementos repetidos#
+BucketSort: 0.0536956 
+
+end_sample
+
+Sample 5
+#Crescente#
+BucketSort: 0.0559994 
+
+#Decrescente#
+BucketSort: 0.0559234 
+
+#Aleatório denso#
+BucketSort: 0.0701598 
+
+#Aleatório denso com elemento 100.000.000#
+BucketSort: 0.270687 
+
+#Aleatório denso com n/4 elementos repetidos#
+BucketSort: 0.0547925 
+
+end_sample
+
