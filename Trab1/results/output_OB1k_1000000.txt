@@ -1,0 +1,90 @@
+Sample 1
+#Crescente#
+BucketSort: 0.0665569 
+
+#Decrescente#
+BucketSort: 6.23637 
+
+#Aleatório denso#
+BucketSort: 3.14965 
+
+#Aleatório denso com elemento 100.000.000#
+BucketSort: 311.681 
+
+#Aleatório denso com n/4 elementos repetidos#
+BucketSort: 3.21553 
+
+end_sample
+
+Sample 2
+#Crescente#
+BucketSort: 0.0668521 
+
+#Decrescente#
+BucketSort: 6.33902 
+
+#Aleatório denso#
+BucketSort: 3.2109 
+
+#Aleatório denso com elemento 100.000.000#
+BucketSort: 307.179 
+
+#Aleatório denso com n/4 elementos repetidos#
+BucketSort: 3.09238 
+
+end_sample
+
+Sample 3
+#Crescente#
+BucketSort: 0.064937 
+
+#Decrescente#
+BucketSort: 6.07167 
+
+#Aleatório denso#
+BucketSort: 3.0668 
+
+#Aleatório denso com elemento 100.000.000#
+BucketSort: 300.541 
+
+#Aleatório denso com n/4 elementos repetidos#
+BucketSort: 3.05049 
+
+end_sample
+
+Sample 4
+#Crescente#
+BucketSort: 0.0635102 
+
+#Decrescente#
+BucketSort: 6.20581 
+
+#Aleatório denso#
+BucketSort: 3.11132 
+
+#Aleatório denso com elemento 100.000.000#
+BucketSort: 297.238 
+
+#Aleatório denso com n/4 elementos repetidos#
+BucketSort: 2.98203 
+
+end_sample
+
+Sample 5
+#Crescente#
+BucketSort: 0.0622534 
+
+#Decrescente#
+BucketSort: 5.90835 
+
+#Aleatório denso#
+BucketSort: 3.0219 
+
+#Aleatório denso com elemento 100.000.000#
+BucketSort: 293.632 
+
+#Aleatório denso com n/4 elementos repetidos#
+BucketSort: 3.04115 
+
+end_sample
+

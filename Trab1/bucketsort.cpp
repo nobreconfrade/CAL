@@ -5,7 +5,7 @@
 #include "bucketsort.hpp"
 //#include "insertsort.hpp"
 
-#define NUM_BUCKETS 10
+#define NUM_BUCKETS 100000
 
 using namespace std;
 
