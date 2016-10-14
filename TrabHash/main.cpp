@@ -12,7 +12,7 @@ int main(int argc, char const *argv[]) {
 	cout << SimpleHash(string(name)) << endl;
 	cout << FoldHash(string(name)) << endl;
 
-	HashMapLinear hashMap(10);
+	HashMapTree hashMap(10);
 
 	hashMap.SetValue(name, 20);
 	cout << hashMap.GetValue(name) << endl;
