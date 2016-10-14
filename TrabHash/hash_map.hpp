@@ -6,8 +6,7 @@
 #include <map>
 #include <stdint.h>
 
-uint32_t SimpleHash(std::string text);
-uint64_t FoldHash(std::string text);
+uint32_t SimpleHash(std::string text); uint64_t FoldHash(std::string text);
 
 typedef std::map<std::string, int> Tree;
 
