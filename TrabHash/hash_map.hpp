@@ -9,10 +9,12 @@
 uint32_t SimpleHash(std::string text);
 uint64_t FoldHash(std::string text);
 
+typedef std::map<std::string, int> Tree;
+
 // Binary Tree Search
 class HashMapTree {
 private:
-	std::vector<int> data;
+	std::vector<Tree> data;
 	uint32_t GetIndexFromHash(const char* key);
 public:
 	HashMapTree (unsigned int numElements);

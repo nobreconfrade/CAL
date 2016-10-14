@@ -5,12 +5,10 @@
 
 using namespace std;
 
+void PrintHashes(string text);
+
 int main(int argc, char const *argv[]) {
 	const char * name = "Winnie";
-
-	cout << name << endl;
-	cout << SimpleHash(string(name)) << endl;
-	cout << FoldHash(string(name)) << endl;
 
 	HashMapTree hashMap(10);
 
@@ -18,4 +16,10 @@ int main(int argc, char const *argv[]) {
 	cout << hashMap.GetValue(name) << endl;
 
 	return 0;
+}
+
+void PrintHashes(string text) {
+	cout << text << endl;
+	cout << SimpleHash(string(text)) << endl;
+	cout << FoldHash(string(text)) << endl;
 }

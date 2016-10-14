@@ -33,15 +33,15 @@ uint64_t FoldHash(std::string text)
 
 // Binary Tree Search
 HashMapTree::HashMapTree(unsigned int numElements) {
-	this->data.resize(numElements, 0);
+	this->data.resize(numElements, Tree());
 }
 
 HashMapTree::~HashMapTree() {
 }
 
 uint32_t HashMapTree::GetIndexFromHash(const char *key) {
-	uint64_t hash = SimpleHash(std::string(key));
-	// uint64_t hash = FoldHash(std::string(key));
+	// uint64_t hash = SimpleHash(std::string(key));
+	uint64_t hash = FoldHash(std::string(key));
 	return hash % data.size();
 }
 
@@ -50,14 +50,14 @@ int HashMapTree::GetValue(const char* key) {
 	/*
 	Add binary tree search code here
 	*/
-	return data[index];
+	return data[index][key];
 }
 
 void HashMapTree::SetValue(const char* key, const int& value) {
 	uint32_t index = GetIndexFromHash(key);
 	/*
-	Add linear search code here
+	Add binary tree search code here
 	*/
-	data[index] = value;
+	data[index][key] = value;
 }
 //
