@@ -29,17 +29,20 @@ struct NameValuePair {
 int main(int argc, char const *argv[]) {
 	const char * name = "Winnie";
 
+	// Linear List Search
 	list<NameValuePair> nameList;
-	map<const char*, int> nameTree;
-	HashMapTree nameHashMap(10);
-
 	nameList.push_back(NameValuePair(name, 20));
-	nameTree[name] = 20;
-	nameHashMap.SetValue(name, 20);
-
 	auto it = find(nameList.begin(), nameList.end(), name);
 	cout << it->value <<  endl;
+
+	// Binary Tree Search
+	map<const char*, int> nameTree;
+	nameTree[name] = 20;
 	cout << nameTree[name] << endl;
+
+	// Hash with binary tree search for collision
+	HashMapTree nameHashMap(10);
+	nameHashMap.SetValue(name, 20);
 	cout << nameHashMap.GetValue(name) << endl;
 
 	return 0;
