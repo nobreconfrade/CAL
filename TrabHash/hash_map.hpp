@@ -6,11 +6,12 @@
 #include <map>
 #include <stdint.h>
 
-uint32_t SimpleHash(std::string text); uint64_t FoldHash(std::string text);
-
-typedef std::map<std::string, int> Tree;
+uint32_t SimpleHash(std::string text);
+uint64_t FoldHash(std::string text);
 
 // Binary Tree Search
+typedef std::map<std::string, int> Tree;
+
 class HashMapTree {
 private:
 	std::vector<Tree> data;

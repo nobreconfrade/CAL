@@ -1,5 +1,7 @@
-
 #include "hash_map.hpp"
+
+/*----------------------------------------------------------------------------*/
+// Hash Functions
 
 uint32_t SimpleHash(std::string text)
 {
@@ -31,7 +33,9 @@ uint64_t FoldHash(std::string text)
 	return hash;
 }
 
-// Binary Tree Search
+/*----------------------------------------------------------------------------*/
+// HashMap
+
 HashMapTree::HashMapTree(unsigned int numElements) {
 	this->data.resize(numElements, Tree());
 }
@@ -54,4 +58,5 @@ void HashMapTree::SetValue(const char* key, const int& value) {
 	uint32_t index = GetIndexFromHash(key);
 	data[index][key] = value;
 }
-//
+
+/*----------------------------------------------------------------------------*/
