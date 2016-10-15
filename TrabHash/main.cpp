@@ -11,7 +11,6 @@ using namespace std;
 
 void PrintHashes(string text);
 
-typedef pair<const char*, int> ListPair;
 struct NameValuePair {
 	const char* name;
 	int value;

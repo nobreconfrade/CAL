@@ -47,17 +47,11 @@ uint32_t HashMapTree::GetIndexFromHash(const char *key) {
 
 int HashMapTree::GetValue(const char* key) {
 	uint32_t index = GetIndexFromHash(key);
-	/*
-	Add binary tree search code here
-	*/
 	return data[index][key];
 }
 
 void HashMapTree::SetValue(const char* key, const int& value) {
 	uint32_t index = GetIndexFromHash(key);
-	/*
-	Add binary tree search code here
-	*/
 	data[index][key] = value;
 }
 //
