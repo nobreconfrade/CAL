@@ -59,4 +59,12 @@ void HashMapTree::SetValue(const char* key, const int& value) {
 	data[index][key] = value;
 }
 
+unsigned HashMapTree::GetNumCollisions() {
+	unsigned numCollisions = 0;
+	for(auto t : data) {
+		numCollisions += t.size() - 1;
+	}
+	return numCollisions;
+}
+
 /*----------------------------------------------------------------------------*/

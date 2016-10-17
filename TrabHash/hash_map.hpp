@@ -16,11 +16,13 @@ class HashMapTree {
 private:
 	std::vector<Tree> data;
 	uint32_t GetIndexFromHash(const char* key);
+
 public:
 	HashMapTree (unsigned int numElements);
 	virtual ~HashMapTree ();
 
 	void SetValue(const char* key, const int& value);
 	int GetValue(const char* key);
+	unsigned GetNumCollisions();
 };
 #endif
