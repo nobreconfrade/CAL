@@ -1,0 +1,15 @@
+Hash: 0.151711
+Hash: 0.188775
+Hash: 0.169521
+Hash: 0.185122
+Hash: 0.168959
+Busca binaria: 0.155736
+Busca binaria: 0.157676
+Busca binaria: 0.177271
+Busca binaria: 0.188254
+Busca binaria: 0.181755
+Busca sequencial: 9.09488
+Busca sequencial: 8.75245
+Busca sequencial: 8.83324
+Busca sequencial: 9.3138
+Busca sequencial: 8.75622

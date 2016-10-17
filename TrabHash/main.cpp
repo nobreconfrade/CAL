@@ -6,10 +6,10 @@
 #include <algorithm> // std::find
 #include <string.h>  // strcmp
 
+#include "timer.hpp"
 #include "hash_map.hpp"
 
 using namespace std;
-
 
 struct NameValuePair {
 	char name[40];
@@ -32,9 +32,9 @@ void TreeMain();
 void HashMain();
 
 int main(int argc, char const *argv[]) {
-	// ListMain();
-	// TreeMain();
-	HashMain();
+	//ListMain();
+	//TreeMain();
+	//HashMain();
 
 	return 0;
 }
@@ -63,6 +63,8 @@ void ListMain() {
 
 	char clearLine[30];
 	cin.getline(clearLine, sizeof(clearLine));
+
+	Timer timer = Timer("Busca sequencial");
 
 	while (numQueries > 0) {
 		numQueries -= 1;
@@ -102,6 +104,8 @@ void TreeMain() {
 	char clearLine[30];
 	cin.getline(clearLine, sizeof(clearLine));
 
+	Timer timer = Timer("Busca binaria");
+
 	while (numQueries > 0) {
 		numQueries -= 1;
 		char name[40];
@@ -136,6 +140,8 @@ void HashMain() {
 
 		char clearLine[30];
 		cin.getline(clearLine, sizeof(clearLine));
+
+		Timer timer = Timer("Hash");
 
 		while (numQueries > 0) {
 			numQueries -= 1;
