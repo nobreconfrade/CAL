@@ -117,7 +117,7 @@ void TreeMain() {
 }
 
 void HashMain() {
-		HashMapTree nameHashMap(10);
+		HashMapTree nameHashMap(100000);
 
 		int numNames;
 		cin >> numNames;
@@ -141,7 +141,7 @@ void HashMain() {
 		char clearLine[30];
 		cin.getline(clearLine, sizeof(clearLine));
 
-		Timer timer = Timer("Hash");
+		Timer timer = Timer("SimpleHash100k");
 
 		while (numQueries > 0) {
 			numQueries -= 1;
