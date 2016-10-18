@@ -141,7 +141,7 @@ void HashMain() {
 		char clearLine[30];
 		cin.getline(clearLine, sizeof(clearLine));
 
-		Timer timer = Timer("SimpleHash100k");
+		//Timer timer = Timer("SimpleHash100k");
 
 		while (numQueries > 0) {
 			numQueries -= 1;
@@ -151,6 +151,7 @@ void HashMain() {
 
 			cout << nameHashMap.GetValue(name) << endl;
 		}
+		//cout << nameHashMap.GetNumCollisions() << endl;
 }
 
 

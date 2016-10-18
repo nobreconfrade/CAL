@@ -44,8 +44,8 @@ HashMapTree::~HashMapTree() {
 }
 
 uint32_t HashMapTree::GetIndexFromHash(const char *key) {
-	uint64_t hash = SimpleHash(std::string(key));
-	//uint64_t hash = FoldHash(std::string(key));
+	//uint64_t hash = SimpleHash(std::string(key));
+	uint64_t hash = FoldHash(std::string(key));
 	return hash % data.size();
 }
 
