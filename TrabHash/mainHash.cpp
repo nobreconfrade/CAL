@@ -34,6 +34,7 @@ void HashMain();
 int main(int argc, char const *argv[]) {
 	//ListMain();
 	//TreeMain();
+	Timer timer = Timer("SimpleHash100k");
 	HashMain();
 
 	return 0;
