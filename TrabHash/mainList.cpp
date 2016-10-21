@@ -32,6 +32,7 @@ void TreeMain();
 void HashMain();
 
 int main(int argc, char const *argv[]) {
+	Timer timer = Timer("Busca sequencial");
 	ListMain();
 	//TreeMain();
 	//HashMain();
@@ -64,7 +65,7 @@ void ListMain() {
 	char clearLine[30];
 	cin.getline(clearLine, sizeof(clearLine));
 
-	Timer timer = Timer("Busca sequencial");
+	//Timer timer = Timer("Busca sequencial");
 
 	while (numQueries > 0) {
 		numQueries -= 1;

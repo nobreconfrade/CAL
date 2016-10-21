@@ -20,6 +20,6 @@ Timer::~Timer() {
 	//cout << mName << ": " << elapsedTime.count() << endl;
 	ofstream outfile;
 	//outfile.open("Tempo-1.txt", std::ios::out | std::ios::app);
-  	outfile.open("tempo5.txt", std::ios_base::app);
+  	outfile.open("tempo5full.txt", std::ios_base::app);
   	outfile << mName << ": " << elapsedTime.count() << endl;
 }

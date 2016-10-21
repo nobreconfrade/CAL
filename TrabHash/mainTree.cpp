@@ -33,6 +33,7 @@ void HashMain();
 
 int main(int argc, char const *argv[]) {
 	//ListMain();
+	Timer timer = Timer("Busca binaria");
 	TreeMain();
 	//HashMain();
 
@@ -104,7 +105,7 @@ void TreeMain() {
 	char clearLine[30];
 	cin.getline(clearLine, sizeof(clearLine));
 
-	Timer timer = Timer("Busca binaria");
+	//Timer timer = Timer("Busca binaria");
 
 	while (numQueries > 0) {
 		numQueries -= 1;

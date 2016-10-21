@@ -1,0 +1,30 @@
+Hash1k: 0.764663
+Hash1k: 0.80766
+Hash1k: 0.780645
+Hash1k: 0.769383
+Hash1k: 0.865378
+Hash100k: 0.568898
+Hash100k: 0.559357
+Hash100k: 0.72147
+Hash100k: 0.623253
+Hash100k: 0.669434
+SimpleHash1k: 0.781479
+SimpleHash1k: 0.768181
+SimpleHash1k: 0.819742
+SimpleHash1k: 0.782013
+SimpleHash1k: 0.81656
+SimpleHash100k: 0.586561
+SimpleHash100k: 0.69331
+SimpleHash100k: 0.545364
+SimpleHash100k: 0.50527
+SimpleHash100k: 0.711526
+Busca sequencial: 32.1843
+Busca sequencial: 30.1491
+Busca sequencial: 31.0766
+Busca sequencial: 31.8202
+Busca sequencial: 31.9627
+Busca binaria: 0.848789
+Busca binaria: 0.838077
+Busca binaria: 0.809584
+Busca binaria: 0.826537
+Busca binaria: 0.747324

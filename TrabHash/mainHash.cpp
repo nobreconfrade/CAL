@@ -34,6 +34,7 @@ void HashMain();
 int main(int argc, char const *argv[]) {
 	//ListMain();
 	//TreeMain();
+	Timer timer = Timer("SimpleHash100k");
 	HashMain();
 
 	return 0;
@@ -141,7 +142,7 @@ void HashMain() {
 		char clearLine[30];
 		cin.getline(clearLine, sizeof(clearLine));
 
-		Timer timer = Timer("Hash");
+		//Timer timer = Timer("SimpleHash100k");
 
 		while (numQueries > 0) {
 			numQueries -= 1;
@@ -151,6 +152,7 @@ void HashMain() {
 
 			cout << nameHashMap.GetValue(name) << endl;
 		}
+		//cout << nameHashMap.GetNumCollisions() << endl;
 }
 
 
