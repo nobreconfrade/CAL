@@ -117,7 +117,7 @@ void TreeMain() {
 }
 
 void HashMain() {
-		HashMapTree nameHashMap(10);
+		HashMapTree nameHashMap(100000);
 
 		int numNames;
 		cin >> numNames;

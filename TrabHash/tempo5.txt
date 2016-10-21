@@ -13,3 +13,11 @@ Busca sequencial: 26.3781
 Busca sequencial: 26.3031
 Busca sequencial: 28.0584
 Busca sequencial: 26.3457
+Hash: 0.186965
+Hash: 0.17202
+Hash: 0.2237
+Hash: 0.167768
+Hash: 0.167024
+Hash: 0.169762
+Hash: 0.17356
+Hash: 0.168248
