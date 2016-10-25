@@ -11,3 +11,9 @@ OBJS = $(subst .cpp, .o, $(SRCS))
 
 encrypt: $(OBJS)
 	$(CXX) mainEncrypt.cpp $(COMMON_SRCS) $(CXXFLAGS) -o encrypt.out $(OBJS)
+
+decrypt: $(OBJS)
+	$(CXX) mainDecrypt.cpp $(COMMON_SRCS) $(CXXFLAGS) -o decrypt.out $(OBJS)
+
+genkeys: $(OBJS)
+		$(CXX) mainGenerateKeys.cpp $(COMMON_SRCS) $(CXXFLAGS) -o generate_keys.out $(OBJS)
