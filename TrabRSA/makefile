@@ -3,7 +3,7 @@ CXX = g++
 # compiler flags:
 CXXFLAGS  = -std=c++11 -Wall
 RM = rm -f
-COMMON_SRCS = bigint/bigint.cpp rsa/key_generation.cpp
+COMMON_SRCS = bigint/bigint.cpp rsa/keys.cpp
 OBJS = $(subst .cpp, .o, $(SRCS))
 
 
@@ -16,4 +16,4 @@ decrypt: $(OBJS)
 	$(CXX) mainDecrypt.cpp $(COMMON_SRCS) $(CXXFLAGS) -o decrypt.out
 
 genkeys: $(OBJS)
-		$(CXX) mainGenerateKeys.cpp $(COMMON_SRCS) $(CXXFLAGS) -o generate_keys.out 
+		$(CXX) mainGenerateKeys.cpp $(COMMON_SRCS) $(CXXFLAGS) -o generate_keys.out
