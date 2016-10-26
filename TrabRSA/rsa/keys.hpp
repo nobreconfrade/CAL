@@ -1,37 +1,39 @@
 #ifndef KEYS_HPP
 #define KEYS_HPP
 
-#include "InfInt.h"
+#include <gmpxx.h>
+
+typedef mpz_class BigInt;
 
 #include <string>
 
 // Private Key: (d, n)
 struct PrivateKey {
-	InfInt d;
-	InfInt n;
+	BigInt d;
+	BigInt n;
 
-	PrivateKey(InfInt argD, InfInt argN) {
+	PrivateKey(BigInt argD, BigInt argN) {
 		d = argD;
 		n = argN;
 	}
 
 	std::string ToString() {
-		return "(" + d.toString() + ", " + n.toString() + ")";
+		return "(" + d.get_str() + ", " + n.get_str() + ")";
 	}
 };
 
 // Public Key: (n, e)
 struct PublicKey {
-	InfInt n;
-	InfInt e;
+	BigInt n;
+	BigInt e;
 
-	PublicKey(InfInt argN, InfInt argE) {
+	PublicKey(BigInt argN, BigInt argE) {
 		n = argN;
 		e = argE;
 	}
 
 	std::string ToString() {
-		return "(" + n.toString() + ", " + e.toString() + ")";
+		return "(" + n.get_str() + ", " + e.get_str() + ")";
 	}
 };
 

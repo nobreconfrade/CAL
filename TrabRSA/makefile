@@ -5,7 +5,7 @@
 CXX = g++
 # compiler flags:
 CXXFLAGS  = -std=c++11 -Wall -MMD
-
+LDFLAGS   = -lgmpxx -lgmp
 # Directories
 OBJDIR = obj
 
@@ -19,14 +19,14 @@ all:
 
 
 $(OBJDIR)/mainGenerateKeys.o: mainGenerateKeys.cpp
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
+	$(CXX) $(CXXFLAGS) -c -o $@ $< $(LDFLAGS)
 
 # Object recipes
 $(OBJDIR)/%.o: rsa/%.cpp
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
+	$(CXX) $(CXXFLAGS) -c -o $@ $< $(LDFLAGS)
 
 generate_keys.out: $(OBJDIR)/mainGenerateKeys.o $(OBJ_FILES)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 
 
