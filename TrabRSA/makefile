@@ -3,7 +3,7 @@ CXX = g++
 # compiler flags:
 CXXFLAGS  = -std=c++11 -Wall
 RM = rm -f
-COMMON_SRCS = bigint/bigint.cpp rsa/keys.cpp
+COMMON_SRCS = rsa/keys.cpp
 OBJS = $(subst .cpp, .o, $(SRCS))
 
 

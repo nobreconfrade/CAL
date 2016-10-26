@@ -1,40 +1,40 @@
 #ifndef KEYS_HPP
 #define KEYS_HPP
 
-#include "../bigint/bigint.h"
+#include "InfInt.h"
 
 #include <string>
 
-using Dodecahedron::Bigint;
-
 // Private Key: (d, n)
 struct PrivateKey {
-	Bigint d;
-	Bigint n;
+	InfInt d;
+	InfInt n;
 
-	PrivateKey(Bigint argD, Bigint argN) {
+	PrivateKey(InfInt argD, InfInt argN) {
 		d = argD;
 		n = argN;
 	}
 
 	std::string ToString() {
-		return "(" + to_string(d) + ", " + to_string(n) + ")";
+		return "(" + d.toString() + ", " + n.toString() + ")";
 	}
 };
 
 // Public Key: (n, e)
 struct PublicKey {
-	Bigint n;
-	Bigint e;
+	InfInt n;
+	InfInt e;
 
-	PublicKey(Bigint argN, Bigint argE) {
+	PublicKey(InfInt argN, InfInt argE) {
 		n = argN;
 		e = argE;
 	}
 
 	std::string ToString() {
-		return "(" + to_string(n) + ", " + to_string(e) + ")";
+		return "(" + n.toString() + ", " + e.toString() + ")";
 	}
 };
+
+void GenerateKeys(PublicKey &out_pubKey, PrivateKey &out_priKey);
 
 #endif // KEYS_HPP
