@@ -35,6 +35,4 @@ struct PublicKey {
 	}
 };
 
-void GenerateKeys(PublicKey &out_pubKey, PrivateKey &out_priKey);
-
 #endif // KEYS_HPP

@@ -1102,7 +1102,7 @@ inline bool InfInt::equalizeSigns()
             }
         }
     }
-    
+
     return isPositive;
 }
 
@@ -1126,7 +1126,7 @@ inline void InfInt::correct(bool justCheckLeadingZeros, bool hasValidSign)
     if (!justCheckLeadingZeros)
     {
         truncateToBase();
-        
+
         if (equalizeSigns())
         {
             pos = ((val.size() == 1 && val[0] == 0) || !hasValidSign) ? true : pos;
@@ -1140,7 +1140,7 @@ inline void InfInt::correct(bool justCheckLeadingZeros, bool hasValidSign)
             }
         }
     }
-    
+
     removeLeadingZeros();
 }
 

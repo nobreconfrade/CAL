@@ -3,4 +3,6 @@
 
 #include "keys.hpp"
 
+void GenerateKeys(PublicKey &out_pubKey, PrivateKey &out_priKey);
+
 #endif // RSA_HPP
