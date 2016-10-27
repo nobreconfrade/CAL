@@ -15,6 +15,10 @@ struct EuclidTriple {
 
 static gmp_randclass gmpRandom(gmp_randinit_mt);
 
+void SetSeed(int seed) {
+	gmpRandom.seed(seed);
+}
+
 EuclidTriple ExtendedEuclid(BigInt a, BigInt b) {
 	if (b == 0)
 		return EuclidTriple(a, 1, 0);
@@ -75,7 +79,8 @@ bool MillerRabin(BigInt n) {
 BigInt GenerateProbableBigPrime(int numBits) {
 	BigInt candidate;
 
-	while(1) {
+	int numTries = 100000;
+	while(numTries-- > 0) {
 		candidate = gmpRandom.get_z_bits(numBits);
 
 		if (MillerRabin(candidate))
@@ -84,7 +89,6 @@ BigInt GenerateProbableBigPrime(int numBits) {
 	return candidate;
 }
 
-// TODO: implement
 BigInt GenerateBigPrime() {
 	BigInt prime = GenerateProbableBigPrime(8);
 
@@ -93,10 +97,9 @@ BigInt GenerateBigPrime() {
 
 // O retorno não necessariamente precisa ser Bigint pois o retorno é um número
 //pequeno
-// TODO: Implement
 BigInt GenerateOddCoprime(BigInt n) {
 	BigInt coprime;
-	BigInt i = 2;
+	BigInt i = 3;
 
 	while(i++) {
 		if (gcd(i, n) == 1) {
