@@ -27,42 +27,48 @@ void SaveKeysToFile(PublicKey pubKey, PrivateKey priKey) {
 	}
 }
 
+bool LoadPublicKeyFromFile(PublicKey &out_pubKey) {
+	ifstream pubKeyFile;
+
+	pubKeyFile.open("key.pub");
+	if (pubKeyFile.is_open() == false)
+	{
+		cout << "*ERROR*: file 'key.pub' not found" << endl;
+		return false;
+	}
+
+	string n, e;
+	pubKeyFile >> n >> e;
+	pubKeyFile.close();
+
+	out_pubKey = PublicKey(BigInt(n), BigInt(e));
+	return true;
+}
+
+bool LoadPrivateKeyFromFile(PrivateKey &out_priKey) {
+	ifstream priKeyFile;
+
+	priKeyFile.open("key.pri");
+	if (priKeyFile.is_open() == false)
+	{
+		cout << "*ERROR*: file 'key.pri' not found" << endl;
+		return false;
+	}
+
+	string n, d;
+	priKeyFile >> n >> d;
+	priKeyFile.close();
+
+	out_priKey = PrivateKey(BigInt(n), BigInt(d));
+	return true;
+}
+
 bool LoadKeysFromFile(PublicKey &out_pubKey, PrivateKey &out_priKey) {
-	{
-		ifstream pubKeyFile;
+	if (LoadPublicKeyFromFile(out_pubKey) == false)
+		return false;
 
-		pubKeyFile.open("key.pub");
-		if (pubKeyFile.is_open() == false)
-		{
-			cout << "*ERROR*: file 'key.pub' not found" << endl;
-			return false;
-		}
-
-		string n, e;
-		pubKeyFile >> n >> e;
-		pubKeyFile.close();
-
-		out_pubKey.n = n;
-		out_pubKey.e = e;
-	}
-	{
-		ifstream priKeyFile;
-
-		priKeyFile.open("key.pri");
-		if (priKeyFile.is_open() == false)
-		{
-			cout << "*ERROR*: file 'key.pri' not found" << endl;
-			return false;
-		}
-
-
-		string n, d;
-		priKeyFile >> n >> d;
-		priKeyFile.close();
-
-		out_priKey.n = n;
-		out_priKey.d = d;
-	}
+	if (LoadPrivateKeyFromFile(out_priKey) == false)
+		return false;
 
 	return true;
 }

@@ -42,6 +42,8 @@ struct PublicKey {
 };
 
 void SaveKeysToFile(PublicKey pubKey, PrivateKey priKey);
+bool LoadPublicKeyFromFile(PublicKey &out_pubKey);
+bool LoadPrivateKeyFromFile(PrivateKey &out_priKey);
 bool LoadKeysFromFile(PublicKey &out_pubKey, PrivateKey &out_priKey);
 
 #endif // KEYS_HPP

@@ -13,19 +13,26 @@ void SaveCyphertextToFile(string cyphertext) {
 	file << cyphertext;
 }
 
+string EncryptText(string text) {
+	string cyphertext;
+	return cyphertext;
+}
+
 int main(int argc, char const *argv[]) {
 	cout << "Eu sou o trabalho de RSA e eu vou cifrar coisas! :D" << endl;
 
 	PublicKey pubKey;
-	PrivateKey priKey;
-
-	if (LoadKeysFromFile(pubKey, priKey) == false)
+	if (LoadPublicKeyFromFile(pubKey) == false)
 		return 0;
 
-	cout << "Public  Key: " << pubKey.ToString() << endl;
-	cout << "Private Key: " << priKey.ToString() << endl;
+	cout << "Public Key: " << pubKey.ToString() << endl;
 
-	SaveCyphertextToFile("Oi:DDDDDDDDDDDDDD");
+	string plaintext;
+	cout << "Write a super secret message to encrypt: ";
+	cin >> plaintext;
+
+	string cyphertext = EncryptText(plaintext);
+	SaveCyphertextToFile(cyphertext);
 
 	return 0;
 }

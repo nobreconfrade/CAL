@@ -24,13 +24,10 @@ bool LoadCyphertextFromFile(string &cyphertext) {
 int main(int argc, char const *argv[]) {
 	cout << "Eu sou o trabalho de RSA e eu vou decifrar coisas! :D" << endl;
 
-	PublicKey pubKey;
 	PrivateKey priKey;
-
-	if (LoadKeysFromFile(pubKey, priKey) == false)
+	if (LoadPrivateKeyFromFile(priKey) == false)
 		return 0;
 
-	cout << "Public  Key: " << pubKey.ToString() << endl;
 	cout << "Private Key: " << priKey.ToString() << endl;
 
 	string cyphertext;
