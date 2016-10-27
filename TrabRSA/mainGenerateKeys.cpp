@@ -8,7 +8,7 @@ int main(int argc, char const *argv[]) {
 	PublicKey pubKey;
 	PrivateKey priKey;
 
-	SetSeed(15);
+	SetSeed(666);
 	GenerateKeys(pubKey, priKey);
 
 	cout << "Public  Key: " << pubKey.ToString() << endl;

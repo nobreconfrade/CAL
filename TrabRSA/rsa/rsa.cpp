@@ -1,3 +1,6 @@
+// Resources:
+// http://doctrina.org/How-RSA-Works-With-Examples.html
+
 #include "rsa.hpp"
 #include <iostream>
 
@@ -59,11 +62,12 @@ bool IsWitness(BigInt n, BigInt witness, BigInt exponent, BigInt remainder) {
 		return false;
 
 	BigInt two = 2;
-	for (BigInt i = 0; i < exponent; ++i)
+	for (BigInt i = 0; i < exponent; ++i) {
 		mpz_powm(witness.get_mpz_t(),
 				 witness.get_mpz_t(),
 				 two.get_mpz_t(),
 				 n.get_mpz_t());
+	}
 
 	if (witness == n - 1)
 		return false;
@@ -71,7 +75,6 @@ bool IsWitness(BigInt n, BigInt witness, BigInt exponent, BigInt remainder) {
 	return true;
 }
 
-// TODO:
 bool MillerRabin(BigInt n) {
 	if (n < 2)
 		return false;
@@ -97,16 +100,15 @@ bool MillerRabin(BigInt n) {
 }
 
 BigInt GenerateProbableBigPrime(int numBits) {
-	BigInt candidate;
-
 	int numTries = 100000;
+
 	while(numTries-- > 0) {
-		candidate = gmpRandom.get_z_bits(numBits);
+		BigInt candidate = gmpRandom.get_z_bits(numBits);
 
 		if (MillerRabin(candidate))
-			break;
+			return candidate;
 	}
-	return candidate;
+	return 0;
 }
 
 BigInt GenerateBigPrime() {
@@ -138,7 +140,7 @@ void GenerateKeys(PublicKey &out_pubKey, PrivateKey &out_priKey) {
 	// cout << "q: " << q.get_str() << endl;
 
 	BigInt n = p * q;
-
+	//
 	BigInt nPhi = (p - 1) * (q - 1);
 
 	BigInt e = GenerateOddCoprime(nPhi);
