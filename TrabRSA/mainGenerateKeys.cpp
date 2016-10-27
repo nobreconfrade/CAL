@@ -1,16 +1,21 @@
 #include <iostream>
+#include <ctime>	// std::time
 
 #include "rsa/rsa.hpp"
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
 
 int main(int argc, char const *argv[]) {
+	SetSeed(std::time(nullptr));
+
 	PublicKey pubKey;
 	PrivateKey priKey;
 
-	SetSeed(666);
 	GenerateKeys(pubKey, priKey);
-
+	SaveKeysToFile(pubKey, priKey);
+	
 	cout << "Public  Key: " << pubKey.ToString() << endl;
 	cout << "Private Key: " << priKey.ToString() << endl;
 

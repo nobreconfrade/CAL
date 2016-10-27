@@ -6,12 +6,13 @@
 
 # C++ compiler
 CXX = g++
-# compiler flags:
+# Compiler and dynamic link flags:
 CXXFLAGS  = -std=c++11 -Wall -MMD
 LDFLAGS   = -lgmpxx -lgmp
 # Directories
 OBJDIR = obj
 
+# Files
 CPP_FILES := $(wildcard rsa/*.cpp)
 OBJ_FILES := $(addprefix $(OBJDIR)/, $(notdir $(CPP_FILES:.cpp=.o)))
 RM = -rm -f

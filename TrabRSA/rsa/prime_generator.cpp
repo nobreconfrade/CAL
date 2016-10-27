@@ -2,7 +2,7 @@
 
 static gmp_randclass gmpRandom(gmp_randinit_mt);
 
-void SetSeed(int seed) {
+void SetSeed(BigInt seed) {
 	gmpRandom.seed(seed);
 }
 
@@ -16,6 +16,8 @@ bool IsWitness(BigInt n, BigInt witness, BigInt exponent, BigInt remainder) {
 	if (witness == 1 or witness == n - 1)
 		return false;
 
+	// The variable 'two' is created because of the way 'mpz_powm()' handles
+	// arguments.
 	BigInt two = 2;
 	for (BigInt i = 0; i < exponent; ++i) {
 		mpz_powm(witness.get_mpz_t(),
@@ -38,6 +40,7 @@ bool MillerRabin(BigInt n) {
 
 	BigInt remainder = n-1;
 	BigInt exponent  = 0;
+
 	while (remainder % 2 == 0){
 		remainder /= 2;
 		exponent  += 1;

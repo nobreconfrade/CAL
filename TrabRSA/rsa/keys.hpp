@@ -9,7 +9,7 @@
 typedef mpz_class BigInt;
 
 
-// Private Key: (d, n)
+// Private Key: (n, d)
 struct PrivateKey {
 	BigInt n = 0;
 	BigInt d = 0;
@@ -40,5 +40,7 @@ struct PublicKey {
 		return "(" + n.get_str() + ", " + e.get_str() + ")";
 	}
 };
+
+void SaveKeysToFile(PublicKey pubKey, PrivateKey priKey);
 
 #endif // KEYS_HPP

@@ -45,7 +45,6 @@ BigInt ModularInverseSolver(BigInt a, BigInt n) {
 	return 0;
 }
 
-
 void GenerateKeys(PublicKey &out_pubKey, PrivateKey &out_priKey) {
 	BigInt p = GenerateBigPrime();
 	BigInt q = GenerateBigPrime();

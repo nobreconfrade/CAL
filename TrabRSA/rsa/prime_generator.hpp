@@ -4,8 +4,7 @@
 #include <gmpxx.h>
 typedef mpz_class BigInt;
 
-
-void SetSeed(int seed);
+void SetSeed(BigInt seed);
 
 BigInt GenerateBigPrime();
 BigInt GenerateOddCoprime(BigInt n);
