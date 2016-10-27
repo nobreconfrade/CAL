@@ -13,7 +13,7 @@ void SaveCyphertextToFile(string cyphertext) {
 	file << cyphertext;
 }
 
-string EncryptText(string text) {
+string EncryptText(PublicKey key, string text) {
 	string cyphertext;
 	/* Encryption happens here! */
 	return cyphertext;
@@ -32,7 +32,7 @@ int main(int argc, char const *argv[]) {
 	cout << "Write a super secret message to encrypt: ";
 	cin >> plaintext;
 
-	string cyphertext = EncryptText(plaintext);
+	string cyphertext = EncryptText(pubKey, plaintext);
 	SaveCyphertextToFile(cyphertext);
 
 	return 0;

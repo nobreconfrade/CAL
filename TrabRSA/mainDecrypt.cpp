@@ -21,7 +21,7 @@ bool LoadCyphertextFromFile(string &cyphertext) {
 	return true;
 }
 
-string DecryptCyphertext(string cyphertext) {
+string DecryptCyphertext(PrivateKey key, string cyphertext) {
 	string text;
 	/* Decryption happens here! */
 	return text;
@@ -40,7 +40,7 @@ int main(int argc, char const *argv[]) {
 	if (LoadCyphertextFromFile(cyphertext) == false)
 		return 0;
 
-	string text = DecryptCyphertext(cyphertext);
+	string text = DecryptCyphertext(priKey, cyphertext);
 
 	cout << "Secret decrypted message: " << text << endl;
 
