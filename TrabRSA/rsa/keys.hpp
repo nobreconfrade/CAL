@@ -1,13 +1,13 @@
 #ifndef KEYS_HPP
 #define KEYS_HPP
 
+#include <string>
+
 // GMP Documentation
 // https://gmplib.org/manual/
 #include <gmpxx.h>
-
 typedef mpz_class BigInt;
 
-#include <string>
 
 // Private Key: (d, n)
 struct PrivateKey {

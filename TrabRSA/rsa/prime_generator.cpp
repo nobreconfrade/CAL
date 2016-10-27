@@ -1,0 +1,88 @@
+#include "prime_generator.hpp"
+
+static gmp_randclass gmpRandom(gmp_randinit_mt);
+
+void SetSeed(int seed) {
+	gmpRandom.seed(seed);
+}
+
+bool IsWitness(BigInt n, BigInt witness, BigInt exponent, BigInt remainder) {
+	// Equivalent to: witness = pow(witness, remainder) % n
+	mpz_powm(witness.get_mpz_t(),
+			 witness.get_mpz_t(),
+			 remainder.get_mpz_t(),
+			 n.get_mpz_t());
+
+	if (witness == 1 or witness == n - 1)
+		return false;
+
+	BigInt two = 2;
+	for (BigInt i = 0; i < exponent; ++i) {
+		mpz_powm(witness.get_mpz_t(),
+				 witness.get_mpz_t(),
+				 two.get_mpz_t(),
+				 n.get_mpz_t());
+	}
+
+	if (witness == n - 1)
+		return false;
+
+	return true;
+}
+
+bool MillerRabin(BigInt n) {
+	if (n < 2)
+		return false;
+	else if (n == 2 || n == 3)
+		return true;
+
+	BigInt remainder = n-1;
+	BigInt exponent  = 0;
+	while (remainder % 2 == 0){
+		remainder /= 2;
+		exponent  += 1;
+	}
+
+	for (BigInt i = 2; i < sqrt(n); i++) {
+		BigInt candidate = gmpRandom.get_z_range(n - 2) + 2;
+
+		if (IsWitness(n, candidate, exponent, remainder)) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+BigInt GenerateProbableBigPrime(int numBits) {
+	int numTries = 100000;
+
+	while(numTries-- > 0) {
+		BigInt candidate = gmpRandom.get_z_bits(numBits);
+
+		if (MillerRabin(candidate))
+			return candidate;
+	}
+	return 0;
+}
+
+BigInt GenerateBigPrime() {
+	return GenerateProbableBigPrime(8);
+}
+
+// O retorno não necessariamente precisa ser Bigint pois o retorno é um número
+//pequeno
+BigInt GenerateOddCoprime(BigInt n) {
+	BigInt coprime;
+	BigInt i = 3;
+
+	while(i++) {
+		if (gcd(i, n) == 1)
+		{
+			coprime = i;
+			break;
+		}
+	}
+
+	return coprime;
+}
