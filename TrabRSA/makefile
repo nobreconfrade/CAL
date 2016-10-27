@@ -18,7 +18,9 @@ OBJ_FILES := $(addprefix $(OBJDIR)/, $(notdir $(CPP_FILES:.cpp=.o)))
 RM = -rm -f
 
 # This prints out variables OBJ_FILES and CPP_FILES
-all:
+all: generate_keys.out encrypt.out decrypt.out
+
+print:
 	$(info $$OBJ_FILES is [$(OBJ_FILES)])
 	$(info $$CPP_FILES is [${CPP_FILES}])
 
@@ -42,8 +44,10 @@ decrypt.out: $(OBJDIR)/mainDecrypt.o $(OBJ_FILES)
 clean:
 	$(RM) *.out
 	$(RM) *.o
-	$(RM) obj/*.o
+	$(RM) $(OBJDIR)/*.o
 	$(RM) *.d
-	$(RM) obj/*.d
+	$(RM) $(OBJDIR)/*.d
 	$(RM) *.gch
 	$(RM) rsa/*.gch
+	$(RM) *.pub
+	$(RM) *.pri

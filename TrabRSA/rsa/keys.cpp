@@ -1,8 +1,11 @@
 #include "keys.hpp"
 
+#include <iostream>
 #include <string>
 #include <fstream>
 
+using std::cout;
+using std::endl;
 using std::string;
 using std::ofstream;
 using std::ifstream;
@@ -24,11 +27,17 @@ void SaveKeysToFile(PublicKey pubKey, PrivateKey priKey) {
 	}
 }
 
-void LoadKeysFromFile(PublicKey &out_pubKey, PrivateKey &out_priKey) {
+bool LoadKeysFromFile(PublicKey &out_pubKey, PrivateKey &out_priKey) {
 	{
 		ifstream pubKeyFile;
 
 		pubKeyFile.open("key.pub");
+		if (pubKeyFile.is_open() == false)
+		{
+			cout << "*ERROR*: file 'key.pub' not found" << endl;
+			return false;
+		}
+
 		string n, e;
 		pubKeyFile >> n >> e;
 		pubKeyFile.close();
@@ -40,6 +49,13 @@ void LoadKeysFromFile(PublicKey &out_pubKey, PrivateKey &out_priKey) {
 		ifstream priKeyFile;
 
 		priKeyFile.open("key.pri");
+		if (priKeyFile.is_open() == false)
+		{
+			cout << "*ERROR*: file 'key.pri' not found" << endl;
+			return false;
+		}
+
+
 		string n, d;
 		priKeyFile >> n >> d;
 		priKeyFile.close();
@@ -47,4 +63,6 @@ void LoadKeysFromFile(PublicKey &out_pubKey, PrivateKey &out_priKey) {
 		out_priKey.n = n;
 		out_priKey.d = d;
 	}
+
+	return true;
 }
