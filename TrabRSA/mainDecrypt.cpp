@@ -21,6 +21,12 @@ bool LoadCyphertextFromFile(string &cyphertext) {
 	return true;
 }
 
+string DecryptCyphertext(string cyphertext) {
+	string text;
+	/* Decryption happens here! */
+	return text;
+}
+
 int main(int argc, char const *argv[]) {
 	cout << "Eu sou o trabalho de RSA e eu vou decifrar coisas! :D" << endl;
 
@@ -31,12 +37,12 @@ int main(int argc, char const *argv[]) {
 	cout << "Private Key: " << priKey.ToString() << endl;
 
 	string cyphertext;
-
 	if (LoadCyphertextFromFile(cyphertext) == false)
 		return 0;
 
-	cout << "Secret decrypted message: " << cyphertext << endl;
+	string text = DecryptCyphertext(cyphertext);
 
+	cout << "Secret decrypted message: " << text << endl;
 
 	return 0;
 }

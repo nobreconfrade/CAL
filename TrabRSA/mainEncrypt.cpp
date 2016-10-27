@@ -15,6 +15,7 @@ void SaveCyphertextToFile(string cyphertext) {
 
 string EncryptText(string text) {
 	string cyphertext;
+	/* Encryption happens here! */
 	return cyphertext;
 }
 
