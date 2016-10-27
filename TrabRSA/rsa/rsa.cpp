@@ -35,11 +35,11 @@ bool MillerRabin(BigInt n) {
 	for (BigInt i = 2; i < sqrt(n); i++) {
 		n = gmpRandom.get_z_range(n - 2) + 2;
 		if (IsWitness(n)) {
-
+			return false;
 		}
 	}
 
-	return false;
+	return true;
 }
 
 BigInt GenerateProbableBigPrime(int numBits) {
