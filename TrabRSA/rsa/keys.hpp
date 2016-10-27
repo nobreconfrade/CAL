@@ -2,12 +2,7 @@
 #define KEYS_HPP
 
 #include <string>
-
-// GMP Documentation
-// https://gmplib.org/manual/
-#include <gmpxx.h>
-typedef mpz_class BigInt;
-
+#include "bigint_helper.hpp"
 
 // Private Key: (n, d)
 struct PrivateKey {
