@@ -19,15 +19,34 @@ void SetSeed(int seed) {
 	gmpRandom.seed(seed);
 }
 
+// Solves e*d mod n =
 EuclidTriple ExtendedEuclid(BigInt a, BigInt b) {
 	if (b == 0)
 		return EuclidTriple(a, 1, 0);
 
 	EuclidTriple e = ExtendedEuclid(b, a % b);
-	return EuclidTriple(e.d, e.y, e.x - a / b * e.y);
+	//	   EuclidTriple(d, x, y)
+	return EuclidTriple(e.d, e.y, e.x - e.y * (a/b) );
 }
 
-// TODO:
+BigInt ModularInverseSolver(BigInt a, BigInt n) {
+	EuclidTriple euclid = ExtendedEuclid(a, n);
+
+	if (euclid.d % 1 == 0) {
+		BigInt x0 = euclid.x * (1 / euclid.d) % n;
+		// cout << "D: " << euclid.d << endl;
+		for (BigInt i = 0; i <= euclid.d; i++) {
+			BigInt x = (x0 + i * (n / euclid.d) ) % n;
+
+			if (x > 0)
+				return x;
+
+		}
+	}
+
+	return 0;
+}
+
 bool IsWitness(BigInt n, BigInt witness, BigInt exponent, BigInt remainder) {
 	// Equivalent to: witness = pow(witness, remainder) % n
 	mpz_powm(witness.get_mpz_t(),
@@ -112,16 +131,19 @@ BigInt GenerateOddCoprime(BigInt n) {
 }
 
 void GenerateKeys(PublicKey &out_pubKey, PrivateKey &out_priKey) {
-	BigInt p = GenerateBigPrime();
-	BigInt q = GenerateBigPrime();
+	BigInt p = 11;//GenerateBigPrime();
+	BigInt q = 13;//GenerateBigPrime();
+
 	cout << "p: " << p.get_str() << endl;
 	cout << "q: " << q.get_str() << endl;
+
 	BigInt n = p * q;
-	// An e = Odd Coprime of (p-1) * (q-1)
-	BigInt e = GenerateOddCoprime((p - 1) * (q - 1));
-	// Modular inverse or multiplicative inverse
-	BigInt d = -1;
-	// BigInt d = ModularInverse(e);
+
+	BigInt nPhi = (p - 1) * (q - 1);
+
+	BigInt e = GenerateOddCoprime(nPhi);
+	// Modular multiplicative inverse
+	BigInt d = ModularInverseSolver(e, nPhi);
 
 	out_pubKey = PublicKey(n, e);
 	out_priKey = PrivateKey(n, d);
