@@ -13,6 +13,16 @@ void SaveCyphertextToFile(string cyphertext) {
 	file << cyphertext;
 }
 
+BigInt EncodeTextAsBigInt(string text) {
+	// int numChars = text.size();
+	BigInt block = 0;
+	for(char c : text) {
+		block = block << 8;
+		block = block | (BigInt)c;
+	}
+	return block;
+}
+
 string EncryptText(string text) {
 	string cyphertext;
 	/* Encryption happens here! */
