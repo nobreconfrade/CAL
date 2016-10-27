@@ -1,4 +1,7 @@
 #include "rsa.hpp"
+#include <iostream>
+
+using namespace std;
 
 struct EuclidTriple {
 	BigInt d, x, y;
@@ -10,6 +13,8 @@ struct EuclidTriple {
 	}
 };
 
+static gmp_randclass gmpRandom(gmp_randinit_mt);
+
 EuclidTriple ExtendedEuclid(BigInt a, BigInt b) {
 	if (b == 0)
 		return EuclidTriple(a, 1, 0);
@@ -18,7 +23,7 @@ EuclidTriple ExtendedEuclid(BigInt a, BigInt b) {
 	return EuclidTriple(e.d, e.y, e.x - a / b * e.y);
 }
 
-// TODO: Implement
+// TODO:
 bool IsWitness(BigInt n, BigInt witness, BigInt exponent, BigInt remainder) {
 	// Equivalent to: witness = pow(witness, remainder) % n
 	mpz_powm(witness.get_mpz_t(),
@@ -42,7 +47,7 @@ bool IsWitness(BigInt n, BigInt witness, BigInt exponent, BigInt remainder) {
 	return true;
 }
 
-// TODO: Implement
+// TODO:
 bool MillerRabin(BigInt n) {
 	if (n < 2)
 		return false;
@@ -56,8 +61,6 @@ bool MillerRabin(BigInt n) {
 		exponent  += 1;
 	}
 
-	gmp_randclass gmpRandom(gmp_randinit_mt);
-
 	for (BigInt i = 2; i < sqrt(n); i++) {
 		BigInt candidate = gmpRandom.get_z_range(n - 2) + 2;
 
@@ -70,12 +73,20 @@ bool MillerRabin(BigInt n) {
 }
 
 BigInt GenerateProbableBigPrime(int numBits) {
-	return 0;
+	BigInt candidate;
+
+	while(1) {
+		candidate = gmpRandom.get_z_bits(numBits);
+
+		if (MillerRabin(candidate))
+			break;
+	}
+	return candidate;
 }
 
 // TODO: implement
 BigInt GenerateBigPrime() {
-	BigInt prime = 7;
+	BigInt prime = GenerateProbableBigPrime(8);
 
 	return prime;
 }
@@ -100,6 +111,8 @@ BigInt GenerateOddCoprime(BigInt n) {
 void GenerateKeys(PublicKey &out_pubKey, PrivateKey &out_priKey) {
 	BigInt p = GenerateBigPrime();
 	BigInt q = GenerateBigPrime();
+	cout << "p: " << p.get_str() << endl;
+	cout << "q: " << q.get_str() << endl;
 	BigInt n = p * q;
 	// An e = Odd Coprime of (p-1) * (q-1)
 	BigInt e = GenerateOddCoprime((p - 1) * (q - 1));
