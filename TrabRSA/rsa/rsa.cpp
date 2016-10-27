@@ -19,8 +19,27 @@ EuclidTriple ExtendedEuclid(BigInt a, BigInt b) {
 }
 
 // TODO: Implement
-bool IsWitness(BigInt n) {
-	return false;
+bool IsWitness(BigInt n, BigInt witness, BigInt exponent, BigInt remainder) {
+	// Equivalent to: witness = pow(witness, remainder) % n
+	mpz_powm(witness.get_mpz_t(),
+			 witness.get_mpz_t(),
+			 remainder.get_mpz_t(),
+			 n.get_mpz_t());
+
+	if (witness == 1 or witness == n - 1)
+		return false;
+
+	BigInt two = 2;
+	for (BigInt i = 0; i < exponent; ++i)
+		mpz_powm(witness.get_mpz_t(),
+				 witness.get_mpz_t(),
+				 two.get_mpz_t(),
+				 n.get_mpz_t());
+
+	if (witness == n - 1)
+		return false;
+
+	return true;
 }
 
 // TODO: Implement
@@ -30,11 +49,19 @@ bool MillerRabin(BigInt n) {
 	else if (n == 2 || n == 3)
 		return true;
 
+	BigInt remainder = n-1;
+	BigInt exponent  = 0;
+	while (remainder % 2 == 0){
+		remainder /= 2;
+		exponent  += 1;
+	}
+
 	gmp_randclass gmpRandom(gmp_randinit_mt);
 
 	for (BigInt i = 2; i < sqrt(n); i++) {
-		n = gmpRandom.get_z_range(n - 2) + 2;
-		if (IsWitness(n)) {
+		BigInt candidate = gmpRandom.get_z_range(n - 2) + 2;
+
+		if (IsWitness(n, candidate, exponent, remainder)) {
 			return false;
 		}
 	}
