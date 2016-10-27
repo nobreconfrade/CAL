@@ -29,6 +29,7 @@ EuclidTriple ExtendedEuclid(BigInt a, BigInt b) {
 	return EuclidTriple(e.d, e.y, e.x - e.y * (a/b) );
 }
 
+// Modular multiplicative inverse
 BigInt ModularInverseSolver(BigInt a, BigInt n) {
 	EuclidTriple euclid = ExtendedEuclid(a, n);
 
@@ -131,18 +132,17 @@ BigInt GenerateOddCoprime(BigInt n) {
 }
 
 void GenerateKeys(PublicKey &out_pubKey, PrivateKey &out_priKey) {
-	BigInt p = 11;//GenerateBigPrime();
-	BigInt q = 13;//GenerateBigPrime();
+	BigInt p = GenerateBigPrime();
+	BigInt q = GenerateBigPrime();
 
-	cout << "p: " << p.get_str() << endl;
-	cout << "q: " << q.get_str() << endl;
+	// cout << "p: " << p.get_str() << endl;
+	// cout << "q: " << q.get_str() << endl;
 
 	BigInt n = p * q;
 
 	BigInt nPhi = (p - 1) * (q - 1);
 
 	BigInt e = GenerateOddCoprime(nPhi);
-	// Modular multiplicative inverse
 	BigInt d = ModularInverseSolver(e, nPhi);
 
 	out_pubKey = PublicKey(n, e);
