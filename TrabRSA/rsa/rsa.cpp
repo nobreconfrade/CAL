@@ -110,9 +110,7 @@ BigInt GenerateProbableBigPrime(int numBits) {
 }
 
 BigInt GenerateBigPrime() {
-	BigInt prime = GenerateProbableBigPrime(8);
-
-	return prime;
+	return GenerateProbableBigPrime(8);
 }
 
 // O retorno não necessariamente precisa ser Bigint pois o retorno é um número
@@ -122,7 +120,8 @@ BigInt GenerateOddCoprime(BigInt n) {
 	BigInt i = 3;
 
 	while(i++) {
-		if (gcd(i, n) == 1) {
+		if (gcd(i, n) == 1)
+		{
 			coprime = i;
 			break;
 		}
