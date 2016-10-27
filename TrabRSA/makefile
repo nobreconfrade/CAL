@@ -33,16 +33,11 @@ $(OBJDIR)/%.o: rsa/%.cpp
 generate_keys.out: $(OBJDIR)/mainGenerateKeys.o $(OBJ_FILES)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
-## OLD STUFF | Ignore me, please ##
-# encrypt: $(OBJS)
-# 	$(CXX) mainEncrypt.cpp $(CPP_FILES) $(CXXFLAGS) -o encrypt.out
-#
-# decrypt: $(OBJS)
-# 	$(CXX) mainDecrypt.cpp $(CPP_FILES) $(CXXFLAGS) -o decrypt.out
-#
-# genkeys: $(OBJ_FILES)
-# 	$(CXX) mainGenerateKeys.cpp $(CPP_FILES) $(CXXFLAGS) -o generate_keys.out
-##
+encrypt.out: $(OBJDIR)/mainEncrypt.o $(OBJ_FILES)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
+decrypt.out: $(OBJDIR)/mainDecrypt.o $(OBJ_FILES)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 clean:
 	$(RM) *.out
