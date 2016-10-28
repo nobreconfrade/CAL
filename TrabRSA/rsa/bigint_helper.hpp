@@ -9,5 +9,6 @@
 typedef mpz_class BigInt;
 
 BigInt EncodeTextAsBigInt(std::string text);
+std::string EncodeBigIntAsText(BigInt number);
 
 #endif // BIGINT_HELPER_HPP

@@ -22,13 +22,24 @@ bool LoadCyphertextFromFile(string &cyphertext) {
 }
 
 string DecryptCyphertext(PrivateKey key, string cyphertext) {
-	string text;
-	/* Decryption happens here! */
+	BigInt encodedCypher = EncodeTextAsBigInt(cyphertext);
+
+	BigInt encodedText;
+	// C = M^e mod n
+	// Equivalent to: text = pow(cypher, d) % n
+	mpz_powm(encodedText.get_mpz_t(),
+			 encodedCypher.get_mpz_t(),
+			 key.d.get_mpz_t(),
+			 key.n.get_mpz_t());
+
+	cout << "C: " << encodedCypher << endl;
+	cout << "M: " << encodedText << endl;
+	string text = EncodeBigIntAsText(encodedText);
 	return text;
 }
 
 int main(int argc, char const *argv[]) {
-	cout << "Eu sou o trabalho de RSA e eu vou decifrar coisas! :D" << endl;
+	// cout << "Eu sou o trabalho de RSA e eu estou quase decifrando coisas! :D" << endl;
 
 	PrivateKey priKey;
 	if (LoadPrivateKeyFromFile(priKey) == false)

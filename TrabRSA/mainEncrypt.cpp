@@ -14,13 +14,24 @@ void SaveCyphertextToFile(string cyphertext) {
 }
 
 string EncryptText(PublicKey key, string text) {
-	string cyphertext;
-	/* Encryption happens here! */
+	BigInt encodedText = EncodeTextAsBigInt(text);
+
+	BigInt encodedCypher;
+	// C = M^e mod n
+	// Equivalent to: cypher = pow(text, e) % n
+	mpz_powm(encodedCypher.get_mpz_t(),
+			 encodedText.get_mpz_t(),
+			 key.e.get_mpz_t(),
+			 key.n.get_mpz_t());
+
+	cout << "M: " << encodedText << endl;
+	cout << "C: " << encodedCypher << endl;
+	string cyphertext = EncodeBigIntAsText(encodedCypher);
 	return cyphertext;
 }
 
 int main(int argc, char const *argv[]) {
-	cout << "Eu sou o trabalho de RSA e eu vou cifrar coisas! :D" << endl;
+	// cout << "Eu sou o trabalho de RSA e eu estou quase cifrando coisas! :D" << endl;
 
 	PublicKey pubKey;
 	if (LoadPublicKeyFromFile(pubKey) == false)
@@ -33,6 +44,7 @@ int main(int argc, char const *argv[]) {
 	cin >> plaintext;
 
 	string cyphertext = EncryptText(pubKey, plaintext);
+	cout << cyphertext;
 	SaveCyphertextToFile(cyphertext);
 
 	return 0;

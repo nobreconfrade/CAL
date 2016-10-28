@@ -70,7 +70,7 @@ BigInt GenerateProbableBigPrime(int numBits) {
 }
 
 BigInt GenerateBigPrime() {
-	return GenerateProbableBigPrime(8);
+	return GenerateProbableBigPrime(32);
 }
 
 // O retorno não necessariamente precisa ser Bigint pois o retorno é um número
