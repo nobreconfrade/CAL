@@ -21,19 +21,26 @@ bool LoadCyphertextFromFile(string &cyphertext) {
 	return true;
 }
 
-string DecryptCyphertext(PrivateKey key, string cyphertext) {
-	BigInt encodedCypher = EncodeTextAsBigInt(cyphertext);
-
+BigInt DecryptEncodedCypher(PrivateKey key, BigInt encodedCypher) {
 	BigInt encodedText;
-	// C = M^e mod n
+	// M = C^e mod n
 	// Equivalent to: text = pow(cypher, d) % n
-	mpz_powm(encodedText.get_mpz_t(),
-			 encodedCypher.get_mpz_t(),
-			 key.d.get_mpz_t(),
-			 key.n.get_mpz_t());
+	mpz_powm_sec(encodedText.get_mpz_t(),
+				 encodedCypher.get_mpz_t(),
+				 key.d.get_mpz_t(),
+				 key.n.get_mpz_t());
 
 	cout << "C: " << encodedCypher << endl;
 	cout << "M: " << encodedText << endl;
+
+	return encodedText;
+}
+
+string DecryptCyphertext(PrivateKey key, string cyphertext) {
+	BigInt encodedCypher = EncodeTextAsBigInt(cyphertext);
+
+	BigInt encodedText = DecryptEncodedCypher(key, encodedCypher);
+
 	string text = EncodeBigIntAsText(encodedText);
 	return text;
 }
