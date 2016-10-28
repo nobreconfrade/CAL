@@ -57,8 +57,8 @@ bool MillerRabin(BigInt n) {
 	return true;
 }
 
-BigInt GenerateProbableBigPrime(int numBits) {
-	int numTries = 100000;
+BigInt GenerateProbableBigPrime(unsigned int numBits) {
+	unsigned int numTries = 100000;
 
 	while(numTries-- > 0) {
 		BigInt candidate = gmpRandom.get_z_bits(numBits);
@@ -69,15 +69,11 @@ BigInt GenerateProbableBigPrime(int numBits) {
 	return 0;
 }
 
-BigInt GenerateBigPrime() {
-	return GenerateProbableBigPrime(32);
-}
-
 // O retorno não necessariamente precisa ser Bigint pois o retorno é um número
 //pequeno
 BigInt GenerateOddCoprime(BigInt n) {
 	BigInt coprime;
-	BigInt i = 3;
+	BigInt i = 65003;
 
 	while(i++) {
 		if (gcd(i, n) == 1)

@@ -46,8 +46,8 @@ BigInt ModularInverseSolver(BigInt a, BigInt n) {
 }
 
 void GenerateKeys(PublicKey &out_pubKey, PrivateKey &out_priKey) {
-	BigInt p = GenerateBigPrime();
-	BigInt q = GenerateBigPrime();
+	BigInt p = GenerateProbableBigPrime(48);
+	BigInt q = GenerateProbableBigPrime(48);
 
 	// cout << "p: " << p.get_str() << endl;
 	// cout << "q: " << q.get_str() << endl;

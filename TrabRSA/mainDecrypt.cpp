@@ -30,8 +30,8 @@ BigInt DecryptEncodedCypher(PrivateKey key, BigInt encodedCypher) {
 				 key.d.get_mpz_t(),
 				 key.n.get_mpz_t());
 
-	cout << "C: " << encodedCypher << endl;
-	cout << "M: " << encodedText << endl;
+	// cout << "C: " << encodedCypher << endl;
+	// cout << "M: " << encodedText << endl;
 
 	return encodedText;
 }
@@ -52,15 +52,21 @@ int main(int argc, char const *argv[]) {
 	if (LoadPrivateKeyFromFile(priKey) == false)
 		return 0;
 
-	cout << "Private Key: " << priKey.ToString() << endl;
+	// cout << "Private Key: " << priKey.ToString() << endl;
 
 	string cyphertext;
 	if (LoadCyphertextFromFile(cyphertext) == false)
 		return 0;
 
+	cout << "--------cyphertext--------" << endl
+		 << cyphertext					 << endl
+		 << "--------------------------" << endl << endl;
+
+	cout << "Decryptying..." << endl << endl;
 	string text = DecryptCyphertext(priKey, cyphertext);
 
-	cout << "Secret decrypted message: " << text << endl;
-
+	cout << "-----------text-----------" << endl
+		 << text						 << endl
+		 << "--------------------------" << endl << endl;
 	return 0;
 }

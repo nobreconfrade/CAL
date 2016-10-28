@@ -23,8 +23,8 @@ BigInt EncryptEncodedText(PublicKey key, BigInt encodedText) {
 				 key.e.get_mpz_t(),
 				 key.n.get_mpz_t());
 
-	cout << "M: " << encodedText << endl;
-	cout << "C: " << encodedCypher << endl;
+	// cout << "M: " << encodedText << endl;
+	// cout << "C: " << encodedCypher << endl;
 
 	return encodedCypher;
 }
@@ -52,7 +52,7 @@ int main(int argc, char const *argv[]) {
 	cin >> plaintext;
 
 	string cyphertext = EncryptText(pubKey, plaintext);
-	cout << cyphertext;
+	cout << "Encrypted secret message: " << cyphertext;
 	SaveCyphertextToFile(cyphertext);
 
 	return 0;
