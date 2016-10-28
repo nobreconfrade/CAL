@@ -21,8 +21,7 @@ std::string EncodeBigIntAsText(BigInt number) {
 	std::string text = "";
 	while (number != 0) {
 		BigInt maskedBig = BigInt(number & 0xFF);
-		int masked = maskedBig.get_ui();
-		unsigned char c = (unsigned char)masked;
+		unsigned char c = (unsigned char)maskedBig.get_ui();
 		// cout << "maskedBig: " << maskedBig << endl;
 		// cout << "   masked: " << masked << endl;
 		// cout << "        c: " << c << endl;

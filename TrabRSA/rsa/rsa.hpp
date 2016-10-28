@@ -4,6 +4,6 @@
 #include "keys.hpp"
 #include "prime_generator.hpp"
 
-void GenerateKeys(PublicKey &out_pubKey, PrivateKey &out_priKey);
+void GenerateKeys(unsigned numBits, PublicKey &out_pub, PrivateKey &out_pri);
 
 #endif // RSA_HPP

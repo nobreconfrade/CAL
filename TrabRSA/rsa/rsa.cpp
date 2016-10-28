@@ -45,9 +45,9 @@ BigInt ModularInverseSolver(BigInt a, BigInt n) {
 	return 0;
 }
 
-void GenerateKeys(PublicKey &out_pubKey, PrivateKey &out_priKey) {
-	BigInt p = GenerateProbableBigPrime(48);
-	BigInt q = GenerateProbableBigPrime(48);
+void GenerateKeys(unsigned numBits, PublicKey &out_pub, PrivateKey &out_pri) {
+	BigInt p = GenerateProbableBigPrime(numBits);
+	BigInt q = GenerateProbableBigPrime(numBits);
 
 	// cout << "p: " << p.get_str() << endl;
 	// cout << "q: " << q.get_str() << endl;
@@ -59,6 +59,6 @@ void GenerateKeys(PublicKey &out_pubKey, PrivateKey &out_priKey) {
 	BigInt e = GenerateOddCoprime(totient);
 	BigInt d = ModularInverseSolver(e, totient);
 
-	out_pubKey = PublicKey(n, e);
-	out_priKey = PrivateKey(n, d);
+	out_pub = PublicKey(n, e);
+	out_pri = PrivateKey(n, d);
 }
