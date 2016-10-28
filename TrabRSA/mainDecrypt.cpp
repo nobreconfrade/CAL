@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 
 using namespace std;
@@ -16,7 +17,7 @@ bool LoadCyphertextFromFile(string &cyphertext) {
 		return false;
 	}
 
-	file >> cyphertext;
+	getline(file, cyphertext);
 
 	return true;
 }
@@ -62,11 +63,12 @@ int main(int argc, char const *argv[]) {
 		 << cyphertext					 << endl
 		 << "--------------------------" << endl << endl;
 
-	cout << "Decryptying..." << endl << endl;
+	cout << "Decrypting..." << endl << endl;
 	string text = DecryptCyphertext(priKey, cyphertext);
 
 	cout << "-----------text-----------" << endl
 		 << text						 << endl
 		 << "--------------------------" << endl << endl;
+
 	return 0;
 }

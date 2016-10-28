@@ -51,8 +51,16 @@ int main(int argc, char const *argv[]) {
 	cout << "Write a super secret message to encrypt: ";
 	cin >> plaintext;
 
+	cout << "-----------text-----------" << endl
+		 << plaintext					 << endl
+		 << "--------------------------" << endl << endl;
+
+	cout << "Encrypting..." << endl << endl;
 	string cyphertext = EncryptText(pubKey, plaintext);
-	cout << "Encrypted secret message: " << cyphertext;
+	
+	 cout << "--------cyphertext--------" << endl
+		 << cyphertext					 << endl
+		 << "--------------------------" << endl << endl;
 	SaveCyphertextToFile(cyphertext);
 
 	return 0;
