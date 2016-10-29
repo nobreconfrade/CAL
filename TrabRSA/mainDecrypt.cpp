@@ -58,8 +58,6 @@ int main(int argc, char const *argv[]) {
 	if (LoadPrivateKeyFromFile(priKey) == false)
 		return 0;
 
-	// cout << "Private Key: " << priKey.ToString() << endl;
-
 	string cyphertext;
 	if (LoadCyphertextFromFile(cyphertext) == false)
 		return 0;
