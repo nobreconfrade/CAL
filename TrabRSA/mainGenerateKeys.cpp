@@ -14,7 +14,7 @@ int main(int argc, char const *argv[]) {
 	if (argc < 2) {
 		cout << "**Missing argument**" << endl;
 		cout << "Proper usage: ./generate_keys.out [numPrimeBits]" << endl
-			 << "     Example: ./generate_keys.out 48" << endl;
+			 << "     Example: ./generate_keys.out 512" << endl;
 
 		return -1;
 	}

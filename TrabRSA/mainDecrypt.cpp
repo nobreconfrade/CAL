@@ -8,7 +8,7 @@
 using namespace std;
 
 bool LoadCyphertextFromFile(string &cyphertext) {
-	ifstream file;
+	std::ifstream file;
 
 	file.open("cyphertext.txt");
 	if (file.is_open() == false)
@@ -17,7 +17,12 @@ bool LoadCyphertextFromFile(string &cyphertext) {
 		return false;
 	}
 
-	getline(file, cyphertext);
+	// Grabs the whole textfile into a buffer and copy it's string, so we recei-
+	//ve every character into the string, even '\0', '\n' and whitespaces, this
+	//is important if we want to recover the encoded cyphertext properly.
+	std::stringstream buffer;
+	buffer << file.rdbuf();
+	cyphertext = buffer.str();
 
 	return true;
 }
