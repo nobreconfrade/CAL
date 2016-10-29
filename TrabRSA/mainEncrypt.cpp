@@ -23,6 +23,9 @@ BigInt EncryptEncodedText(PublicKey key, BigInt encodedText) {
 				 key.e.get_mpz_t(),
 				 key.n.get_mpz_t());
 
+	if (encodedText > key.n) {
+		cout << "<WARNING>: M is bigger than N" << endl;
+	}
 	// cout << "M: " << encodedText << endl;
 	// cout << "C: " << encodedCypher << endl;
 
@@ -57,7 +60,7 @@ int main(int argc, char const *argv[]) {
 
 	cout << "Encrypting..." << endl << endl;
 	string cyphertext = EncryptText(pubKey, plaintext);
-	
+
 	 cout << "--------cyphertext--------" << endl
 		 << cyphertext					 << endl
 		 << "--------------------------" << endl << endl;
