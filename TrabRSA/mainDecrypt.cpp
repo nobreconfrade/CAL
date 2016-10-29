@@ -17,7 +17,7 @@ bool LoadCyphertextFromFile(string &cyphertext) {
 		return false;
 	}
 
-	// Grabs the whole textfile into a buffer and copy it's string, so we recei-
+	// Reads the whole textfile into a buffer and copy it's string, so we recei-
 	//ve every character into the string, even '\0', '\n' and whitespaces, this
 	//is important if we want to recover the encoded cyphertext properly.
 	std::stringstream buffer;

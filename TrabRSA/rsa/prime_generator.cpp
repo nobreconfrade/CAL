@@ -69,8 +69,7 @@ BigInt GenerateProbableBigPrime(unsigned int numBits) {
 	return 0;
 }
 
-// O retorno não necessariamente precisa ser Bigint pois o retorno é um número
-//pequeno
+// FIX: Currently this functions always returns the same coprime
 BigInt GenerateOddCoprime(BigInt n) {
 	BigInt coprime;
 	BigInt i = 65003;

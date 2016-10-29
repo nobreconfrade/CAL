@@ -48,8 +48,6 @@ int main(int argc, char const *argv[]) {
 	if (LoadPublicKeyFromFile(pubKey) == false)
 		return 0;
 
-	// cout << "Public Key: " << pubKey.ToString() << endl;
-
 	string plaintext;
 	cout << "Write a super secret message to encrypt: ";
 	cin >> plaintext;
@@ -64,6 +62,7 @@ int main(int argc, char const *argv[]) {
 	 cout << "--------cyphertext--------" << endl
 		 << cyphertext					 << endl
 		 << "--------------------------" << endl << endl;
+		 
 	SaveCyphertextToFile(cyphertext);
 
 	return 0;
