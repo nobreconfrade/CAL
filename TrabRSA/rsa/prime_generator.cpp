@@ -38,7 +38,7 @@ bool MillerRabin(BigInt n) {
 	else if (n == 2 || n == 3)
 		return true;
 
-	BigInt remainder = n-1;
+	BigInt remainder = n - 1;
 	BigInt exponent  = 0;
 
 	while (remainder % 2 == 0){
@@ -46,7 +46,7 @@ bool MillerRabin(BigInt n) {
 		exponent  += 1;
 	}
 
-	for (BigInt i = 2; i < sqrt(n); i++) {
+	for (BigInt i = 0; i < 100/*sqrt(n)*/; i++) {
 		BigInt candidate = gmpRandom.get_z_range(n - 2) + 2;
 
 		if (IsWitness(n, candidate, exponent, remainder)) {
