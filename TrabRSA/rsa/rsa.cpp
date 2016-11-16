@@ -56,7 +56,7 @@ void GenerateKeys(unsigned numBits, PublicKey &out_pub, PrivateKey &out_pri) {
 	// ϕ(n) = Euler's totient = (p - 1) * (q - 1)
 	BigInt totient = (p - 1) * (q - 1);
 
-	BigInt e = GenerateOddCoprime(totient);
+	BigInt e = GenerateCoprime(totient);
 	BigInt d = ModularInverseSolver(e, totient);
 
 	out_pub = PublicKey(n, e);

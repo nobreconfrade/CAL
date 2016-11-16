@@ -1,4 +1,8 @@
 #include "prime_generator.hpp"
+#include <vector>
+#include <iostream>
+using std::cout;
+using std::endl;
 
 static gmp_randclass gmpRandom(gmp_randinit_mt);
 
@@ -69,18 +73,42 @@ BigInt GenerateProbableBigPrime(unsigned int numBits) {
 	return 0;
 }
 
-// FIX: Currently this functions always returns the same coprime
-BigInt GenerateOddCoprime(BigInt n) {
-	BigInt coprime;
-	BigInt i = 65003;
 
-	while(i++) {
-		if (gcd(i, n) == 1)
-		{
-			coprime = i;
-			break;
+unsigned Eratosthenes(unsigned size) {
+	std::vector<bool> primes;
+
+	for (unsigned i = 0; i < size; i += 1) {
+		if ((i + 1) % 2 == 0)
+			primes.push_back(false);
+		else
+			primes.push_back(true);
+	}
+
+	for (unsigned x = 3; x < size; x += 2) {
+		if (primes[x - 1] == false)
+			continue;
+
+		for (unsigned i = x * 2; i <= size; i += x) {
+			if (i % x == 0) {
+				primes[i - 1] = false;
+			}
 		}
 	}
+
+	for (unsigned i = size; i > 0; i -= 1) {
+		if (primes[i - 1] == true) {
+			return i;
+		}
+	}
+
+	return 65003;
+}
+
+BigInt GenerateCoprime(BigInt n) {
+	BigInt coprime;
+	unsigned i = 65003;
+
+	coprime = Eratosthenes(i + 10000);
 
 	return coprime;
 }

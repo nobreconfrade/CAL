@@ -84,13 +84,11 @@ string DecryptCyphertext(PrivateKey key, string cyphertext) {
 }
 
 int main(int argc, char const *argv[]) {
-	// cout << "Eu sou o trabalho de RSA e eu estou quase decifrando coisas! :D" << endl;
 
 	PublicKey pubKey;
 	if (LoadPublicKeyFromFile(pubKey) == false)
 		return 0;
 
-	// BigInt d = FindD(203, 5);
 	BigInt d = FindD(pubKey.n, pubKey.e);
 	cout << "Found d: " << d.get_str() << '\n';
 

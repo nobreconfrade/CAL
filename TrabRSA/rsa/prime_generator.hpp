@@ -7,6 +7,6 @@ typedef mpz_class BigInt;
 void SetSeed(BigInt seed);
 
 BigInt GenerateProbableBigPrime(unsigned int numBits);
-BigInt GenerateOddCoprime(BigInt n);
+BigInt GenerateCoprime(BigInt n);
 
 #endif // PRIME_GENERATOR_HPP
