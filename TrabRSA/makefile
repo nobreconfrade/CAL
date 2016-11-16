@@ -7,7 +7,7 @@
 # C++ compiler
 CXX = g++
 # Compiler and dynamic link flags:
-CXXFLAGS  = -std=c++11 -Wall -MMD
+CXXFLAGS  = -g -std=c++11 -Wall -MMD
 LDFLAGS   = -lgmpxx -lgmp
 # Directories
 OBJDIR = obj
@@ -18,7 +18,7 @@ OBJ_FILES := $(addprefix $(OBJDIR)/, $(notdir $(CPP_FILES:.cpp=.o)))
 RM = -rm -f
 
 # This prints out variables OBJ_FILES and CPP_FILES
-all: generate_keys.out encrypt.out decrypt.out
+all: generate_keys.out encrypt.out decrypt.out bruteforce.out
 
 print:
 	$(info $$OBJ_FILES is [$(OBJ_FILES)])
@@ -40,6 +40,10 @@ encrypt.out: $(OBJDIR)/mainEncrypt.o $(OBJ_FILES)
 
 decrypt.out: $(OBJDIR)/mainDecrypt.o $(OBJ_FILES)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
+bruteforce.out: $(OBJDIR)/mainBruteforce.o $(OBJ_FILES)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
 
 clean:
 	$(RM) *.out
