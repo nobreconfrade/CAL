@@ -23,7 +23,7 @@ bool IsWitness(BigInt n, BigInt witness, BigInt exponent, BigInt remainder) {
 
 	// The variable 'two' is created because of the way 'mpz_powm()' handles
 	// arguments.
-	BigInt two = 2; // ???
+	BigInt two = 2;
 	for (BigInt i = 0; i < exponent; ++i) {
 		mpz_powm(witness.get_mpz_t(),
 				 witness.get_mpz_t(),
@@ -68,7 +68,7 @@ BigInt GenerateProbableBigPrime(unsigned int numBits) {
 	unsigned int numTries = 100000;
 
 	while(numTries-- > 0) {
-		BigInt candidate = gmpRandom.get_z_bits(numBits); // Esta linha gera um BigInt aleatório? Como funciona a range
+		BigInt candidate = gmpRandom.get_z_bits(numBits); //with this number of bits
 
 		if (MillerRabin(candidate))
 			return candidate;

@@ -1,16 +1,16 @@
 #include <iostream>
 using namespace std;
-#define INFINITE 0xFFFFF;
+#define INFINITE 0xFFFF;
 
 // http://www.ccs.neu.edu/home/jaa/CSG713.04F/Information/Handouts/dyn_prog.pdf
 void iceblocks(int *tam,int n, int m){
-    int c[100000],p,min,i;
+    int c[1000000],p,min,i;
     c[0] = 0;
-    for(p=1;p<m;p++){
+    for(p=1;p<=m;p++){
         min=INFINITE;
         for(i=0;i<n;i++){
-            if(tam[i]<=p){
-                if(1+c[p-tam[i]]<min){
+            if(tam[i] <= p){
+                if(1+c[p-tam[i]] < min){
                     min = 1 + c[p-tam[i]];
                 }
             }
@@ -20,7 +20,7 @@ void iceblocks(int *tam,int n, int m){
     }
     // for(i=0;i<m;i++)
     //     cout <<c[i]<< '\n';
-    cout <<c[m-1]<< '\n';
+    cout <<c[m]<< '\n';
 }
 
 int main(){
